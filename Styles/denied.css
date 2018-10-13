@@ -1,0 +1,238 @@
+.balance-content .balance-header {
+	display:flex;
+	align-items:center;
+	margin-bottom:2rem;
+	flex-wrap:wrap
+}
+.balance-content .balance-header .page-title {
+	margin-bottom:0
+}
+.balance-content .balance-header .balance-keyword {
+	height:3rem;
+	padding-left:1.2rem;
+	padding-right:1.2rem;
+	padding-top:0;
+	padding-bottom:0
+}
+.balance-content .balance-header .balance-action-group {
+	display:flex;
+	align-items:center;
+	margin-left:-1.4rem;
+	margin-right:-1.4rem
+}
+.balance-content .balance-header .balance-action-group>div {
+	padding-left:1.4rem;
+	padding-right:1.4rem
+}
+.balance-content .balance-header .balance-action-group .checkbox-design {
+	margin-bottom:0
+}
+.balance-content .balance-header label {
+	margin-bottom:0
+}
+.balance-content .balance-header .balance-checkbox {
+	margin-left:auto
+}
+.balance-content .balance-header .balance-account-value {
+	padding:0 2rem;
+	display:flex;
+	align-items:center
+}
+.balance-content .balance-header .balance-account-value dl {
+	display:flex;
+	align-items:center;
+	margin:0;
+	padding:0
+}
+.balance-content .balance-header .balance-account-value dt,.balance-content .balance-header .balance-account-value dd {
+	display:flex;
+	align-items:center;
+	margin:0;
+	padding:0
+}
+.balance-content .balance-header .balance-account-value dt {
+	padding-right:0.5rem
+}
+.balance-content .balance-header .balance-account-value dd {
+	padding:0
+}
+.balance-content .balance-header .balance-account-value select {
+	margin:0 0 0 1rem;
+	height:3rem !important;
+	padding:0 3rem 0 1rem
+}
+@media (max-width:920px) {
+	.balance-content .balance-header-left {
+		flex:0 0 100%;
+		width:100%
+	}
+	.balance-content .balance-header-right,.balance-content .balance-header .balance-checkbox,.balance-content .balance-header .balance-account-value {
+		flex:1 1 auto
+	}
+}
+@media (max-width:811px) {
+	.balance-content .balance-header-left {
+		margin-bottom:1rem
+	}
+	.balance-content .balance-header-right {
+		flex:0 0 14rem;
+		max-width:14rem
+	}
+	.balance-content .balance-header .balance-account-value {
+		margin-top:1rem;
+		padding-left:0;
+		padding-right:0;
+		flex:0 0 100%;
+		width:100%;
+		order:2
+	}
+}
+@media (max-width:374px) {
+	.balance-content .balance-header-right,.balance-content .balance-header .balance-checkbox {
+		flex:0 0 100%;
+		width:100%;
+		max-width:100%
+	}
+	.balance-content .balance-header-right {
+		margin-top:1rem
+	}
+	.balance-content .balance-header .balance-account-value dl {
+		flex-wrap:wrap
+	}
+	.balance-content .balance-header .balance-account-value dl dt,.balance-content .balance-header .balance-account-value dl dd {
+		flex:0 0 100%;
+		width:100%
+	}
+}
+.balance-content .balance-btn-deposit {
+	width:20px;
+	height:20px;
+	display:inline-block;
+	border-radius:3px;
+	-ms-transition:all 0.4s ease;
+	-moz-transition:all 0.4s ease;
+	-o-transition:all 0.4s ease;
+	-webkit-transition:all 0.4s ease;
+	transition:all 0.4s ease;
+	background:#4978bc;
+	position:relative
+}
+.balance-content .balance-btn-deposit::after,.balance-content .balance-btn-deposit::before {
+	content:"";
+	position:absolute;
+	top:50%;
+	left:50%;
+	background:#fff;
+	-moz-transform:translate(-50%,-50%);
+	-webkit-transform:translate(-50%,-50%);
+	-o-transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+	transform:translate(-50%,-50%)
+}
+.balance-content .balance-btn-deposit::before {
+	width:12px;
+	height:2px
+}
+.balance-content .balance-btn-deposit::after {
+	width:2px;
+	height:12px
+}
+.balance-content .balance-btn-deposit:hover {
+	background:#7494c3
+}
+.balance-content .balance-btn-deposit.disabled {
+	background:#7494c3;
+	pointer-events:none !important
+}
+.balance-content .balance-btn-withdraw {
+	margin-left:1.2rem;
+	width:20px;
+	height:20px;
+	display:inline-block;
+	border-radius:3px;
+	-ms-transition:all 0.4s ease;
+	-moz-transition:all 0.4s ease;
+	-o-transition:all 0.4s ease;
+	-webkit-transition:all 0.4s ease;
+	transition:all 0.4s ease;
+	background:#f7941e;
+	position:relative
+}
+.balance-content .balance-btn-withdraw::before {
+	content:"";
+	position:absolute;
+	top:50%;
+	left:50%;
+	background:#fff;
+	-moz-transform:translate(-50%,-50%);
+	-webkit-transform:translate(-50%,-50%);
+	-o-transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+	transform:translate(-50%,-50%)
+}
+.balance-content .balance-btn-withdraw::before {
+	width:12px;
+	height:2px
+}
+.balance-content .balance-btn-withdraw:hover {
+	background:#ffbc6d
+}
+.balance-content .balance-btn-withdraw.disabled {
+	background:#ffbc6d;
+	pointer-events:none !important
+}
+.balance-content .table-balance {
+	border-spacing:0
+}
+.balance-content .table-balance>thead>tr th:nth-of-type(1) {
+	width:10rem;
+	text-align:center
+}
+.balance-content .table-balance>thead>tr th:nth-of-type(2) {
+	width:20rem
+}
+.balance-content .table-balance>tbody>tr td:nth-of-type(1) {
+	width:10rem;
+	text-align:center
+}
+.balance-content .table-balance>tbody>tr td:nth-of-type(2) {
+	width:20rem
+}
+.balance-content .frm-redeem {
+	margin-top:4.5rem
+}
+@media (max-width:640px) {
+	.balance-content .frm-redeem .input-group .input-group-text,.balance-content .frm-redeem .input-group .form-control,.balance-content .frm-redeem .input-group .btn {
+		padding-left:1rem;
+		padding-right:1rem
+	}
+}
+@media (max-width:567px) {
+	.balance-content .frm-redeem .input-group {
+		justify-content:center
+	}
+	.balance-content .frm-redeem .input-group .input-group-text,.balance-content .frm-redeem .input-group .form-control,.balance-content .frm-redeem .input-group .btn {
+		flex:0 0 100%;
+		max-width:100%;
+		width:100%
+	}
+	.balance-content .frm-redeem .input-group .input-group-prepend,.balance-content .frm-redeem .input-group .input-group-append {
+		margin:0;
+		flex:0 0 100%;
+		width:100%
+	}
+	.balance-content .frm-redeem .input-group .input-group-text {
+		display:block;
+		text-align:center;
+		border-bottom:0;
+		border-radius:0.2rem 0.2rem 0 0
+	}
+	.balance-content .frm-redeem .input-group .btn {
+		display:block;
+		width:100%;
+		flex:0 0 100%;
+		margin-top:0;
+		border-radius: 0 0 0.2rem 0.2rem
+	}
+}
+/*# sourceMappingURL=balance.css.map */

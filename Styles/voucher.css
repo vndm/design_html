@@ -1,0 +1,32 @@
+﻿@media (max-width:567px) {
+	.input-group-voucher .input-group-prepend,.input-group-voucher .input-group-append {
+		-moz-box-flex:0 0 100%;
+		-webkit-flex:0 0 100%;
+		-ms-flex:0 0 100%;
+		flex:0 0 100%
+	}
+	.input-group-voucher .input-group-text {
+		-moz-box-flex:0 0 100%;
+		-webkit-flex:0 0 100%;
+		-ms-flex:0 0 100%;
+		flex:0 0 100%;
+		border-radius:0 !important;
+		border-top-left-radius:0.4rem !important;
+		border-top-right-radius:0.4rem !important
+	}
+	.input-group-voucher .form-control {
+		border-radius:0 !important;
+		border-top:0;
+		border-bottom:0
+	}
+	.input-group-voucher .input-group-append {
+		margin-left:0
+	}
+	.input-group-voucher .input-group-append .btn {
+		width:100%;
+		display:block;
+		border-radius:0 !important;
+		border-bottom-right-radius:0.4rem !important;
+		border-bottom-left-radius:0.4rem !important
+	}
+}

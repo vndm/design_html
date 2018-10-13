@@ -1,0 +1,133 @@
+.section-confirm {
+	background:#0b1f34
+}
+.section-confirm .title {
+	font-size:1.8rem;
+	font-weight:bold;
+	margin-bottom:3.6rem
+}
+.section-confirm .inner {
+	background:#0b1f34 url(../Images/bg_register_login.png) no-repeat right center;
+	margin-right:0;
+}
+.section-confirm .section-form-inner {
+	margin-left:10.3rem
+}
+.section-confirm .reset-password-g {
+	text-align:right;
+	font-size:1.3rem;
+	margin-bottom:3rem
+}
+.section-confirm .reset-password-g .link-reset-password {
+	color:#b2b2b2;
+	text-decoration:none
+}
+.section-confirm .form-md-group {
+	margin-top:2.5rem;
+	margin-bottom:2.5rem
+}
+.section-confirm .form-md-group .form-control {
+	background:transparent;
+	color:#fff !important;
+	border-bottom:1px solid rgba(255,255,255,0.2)
+}
+.section-confirm .form-md-group select.form-control {
+	color:#888 !important
+}
+.section-confirm .form-md-group.no-form-control {
+	border-bottom:1px solid rgba(255,255,255,0.2)
+}
+.section-confirm .ref-info {
+	margin:0;
+	padding:0;
+	display:flex;
+	flex-wrap:wrap
+}
+.section-confirm .ref-info dt,.section-confirm .ref-info dd {
+	margin:0;
+	padding:0;
+	font-weight:normal
+}
+.section-confirm .ref-info dt {
+	padding-right:0.5rem;
+	color:rgba(255,255,255,0.5)
+}
+.section-confirm .ref-info dd {
+	color:#ffc107
+}
+.section-confirm .form-login-button {
+	margin-top:3.5rem;
+	margin-bottom:0.75rem
+}
+@media (max-width:979px) {
+	.section-confirm .inner {
+		-ms-background-size:auto 60%;
+		-moz-background-size:auto 60%;
+		-webkit-background-size:auto 60%;
+		background-size:auto 60%
+	}
+}
+@media (max-width:767px) {
+	.section-confirm {
+		background:#0b1f34
+	}
+	.section-confirm .inner {
+		margin-right:0;
+		-ms-background-size:auto 50%;
+		-moz-background-size:auto 50%;
+		-webkit-background-size:auto 50%;
+		background-size:auto 50%
+	}
+	.section-confirm .inner .section-form-inner {
+		margin-left:auto
+	}
+}
+@media (max-width:640px) {
+	.section-confirm .inner {
+		margin-right:0;
+		-ms-background-size:auto 50%;
+		-moz-background-size:auto 50%;
+		-webkit-background-size:auto 50%;
+		background-size:auto 50%
+	}
+	.section-confirm .inner .section-form-inner {
+		margin-left:auto
+	}
+}
+@media (max-width:639px) {
+	.section-confirm {
+		padding-top:4rem;
+		padding-bottom:4rem
+	}
+	.section-confirm .title {
+		margin-bottom:3.2rem
+	}
+	.section-confirm .form-group-info {
+		margin-top:1rem
+	}
+	.section-confirm .btn-social-list {
+		margin-top:0.2rem;
+		padding-top:4rem;
+		border-top:1px solid #1a2f44
+	}
+	.section-confirm .btn-social-list ul {
+		margin-left:-2rem;
+		margin-right:-2rem
+	}
+	.section-confirm .btn-social-list ul>li {
+		padding-left:2rem;
+		padding-right:2rem
+	}
+	.section-confirm .inner {
+		padding-top:0;
+		padding-bottom:0
+	}
+}
+@media (max-width:567px) {
+	.section-confirm .inner {
+		-ms-background-size:auto 35%;
+		-moz-background-size:auto 35%;
+		-webkit-background-size:auto 35%;
+		background-size: auto 35%
+	}
+}

@@ -1,0 +1,94 @@
+﻿@media only screen and (max-width:1100px) and (min-width:992px) {
+	.setting-content .nav-list ul>li>a {
+			padding-left:0.5vw;
+			padding-right:0.5vw
+	}
+}
+@media (max-width:870px) {
+	.setting-content .nav-list ul>li>a {
+			padding-left:1rem;
+			padding-right:1rem
+	}
+}
+.setting-password-content .form-horizontal .row .col-2 {
+	flex:0 0 110px;
+	max-width:110px;
+	width:110px
+}
+.setting-password-content .form-horizontal .row .col-10 {
+	flex:0 0 calc(100% - 110px);
+	max-width:calc(100% - 110px);
+	width:calc(100% - 110px)
+}
+.setting-notification-content .form-horizontal .row .col-2 {
+	flex:0 0 120px;
+	max-width:120px;
+	width:120px
+}
+.setting-notification-content .form-horizontal .row .col-10 {
+	flex:0 0 calc(100% - 120px);
+	max-width:calc(100% - 120px);
+	width:calc(100% - 120px)
+}
+@media (max-width:374px) {
+	.setting-notification-content .form-horizontal .row .col-2 {
+			flex:0 0 100%;
+			max-width:100%;
+			width:100%;
+			margin-bottom:0.3rem
+	}
+	.setting-notification-content .form-horizontal .row .col-10 {
+			flex:0 0 100%;
+			max-width:100%;
+			width:100%
+	}
+}
+.setting-security-content .form-horizontal .row .col-2 {
+	flex:0 0 110px;
+	max-width:110px;
+	width:110px
+}
+.setting-security-content .form-horizontal .row .col-10 {
+	flex:0 0 calc(100% - 110px);
+	max-width:calc(100% - 110px);
+	width:calc(100% - 110px)
+}
+.setting-link-content .table-seeting-link>thead>tr th:nth-of-type(1) {
+	width:50px;
+	text-align:center
+}
+.setting-link-content .table-seeting-link>thead>tr th:nth-of-type(3) {
+	width:70px
+}
+.setting-link-content .table-seeting-link>thead>tr th:nth-of-type(4) {
+	width:130px
+}
+.setting-link-content .table-seeting-link>thead>tr th,.setting-link-content .table-seeting-link>thead>tr td,.setting-link-content .table-seeting-link>tbody>tr th,.setting-link-content .table-seeting-link>tbody>tr td {
+	text-align:center
+}
+.setting-link-content .table-seeting-link>thead>tr th:nth-of-type(1) i,.setting-link-content .table-seeting-link>thead>tr td:nth-of-type(1) i,.setting-link-content .table-seeting-link>tbody>tr th:nth-of-type(1) i,.setting-link-content .table-seeting-link>tbody>tr td:nth-of-type(1) i {
+	margin-right:10px;
+	display:inline-block
+}
+.setting-link-content .setting-link-action .btn {
+	width:20px;
+	min-width:20px;
+	height:20px;
+	padding:0;
+	margin-right:10px;
+	-moz-transition:all 0.4s ease;
+	-webkit-transition:all 0.4s ease;
+	-o-transition:all 0.4s ease;
+	-ms-transition:all 0.4s ease;
+	transition:all 0.4s ease
+}
+.setting-link-content .setting-link-action .btn:last-child {
+	margin-right:0
+}
+.setting-link-content .setting-link-action .btn i {
+	font-size:1rem;
+	line-height:19px
+}
+.setting-link-content .setting-link-action .btn:hover {
+	opacity:0.7
+}

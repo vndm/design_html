@@ -1,0 +1,39 @@
+﻿.fees-content .section {
+	margin-bottom:6rem
+}
+.fees-content .section:last-child {
+	margin-bottom:0
+}
+.fees-content .table-fees-group>thead tr th:nth-of-type(4),.fees-content .table-fees-group>thead tr td:nth-of-type(4),.fees-content .table-fees-group>tbody tr th:nth-of-type(4),.fees-content .table-fees-group>tbody tr td:nth-of-type(4) {
+	width:130px
+}
+.fees-content .table-fees-group>thead tr th:nth-of-type(4) .badge,.fees-content .table-fees-group>thead tr td:nth-of-type(4) .badge,.fees-content .table-fees-group>tbody tr th:nth-of-type(4) .badge,.fees-content .table-fees-group>tbody tr td:nth-of-type(4) .badge {
+	display:block;
+	text-align:center;
+	text-transform:uppercase
+}
+.fees-content .table-fees-group>tbody tr td:last-child img {
+	vertical-align:middle
+}
+.fees-content .table-fees-group>tbody tr td:last-child span {
+	display:inline-block;
+	padding-left:1.5rem
+}
+.fees-content .fees-group-info {
+	color:#e74c3c;
+	margin-bottom:2rem
+}
+.fees-content .table-fees-buy-sell>thead tr th:nth-of-type(1),.fees-content .table-fees-buy-sell>thead tr th:nth-of-type(2),.fees-content .table-fees-buy-sell>tbody tr th:nth-of-type(1),.fees-content .table-fees-buy-sell>tbody tr th:nth-of-type(2) {
+	width:110px
+}
+.fees-content .table-fees-buy-sell>thead tr th,.fees-content .table-fees-buy-sell>thead tr td,.fees-content .table-fees-buy-sell>tbody tr th,.fees-content .table-fees-buy-sell>tbody tr td {
+	padding-left:0.5rem;
+	padding-right:0.5rem;
+	text-align:center;
+	vertical-align:middle
+}
+@media (max-width:639px) {
+	.fees-content .section {
+			margin-bottom:3rem
+	}
+}

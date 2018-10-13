@@ -1,0 +1,6 @@
+﻿.status-content .table-status thead>tr th,.status-content .table-status thead>tr td,.status-content .table-status tbody>tr th,.status-content .table-status tbody>tr td {
+	text-align:center
+}
+.status-content .table-status thead>tr th:nth-of-type(7),.status-content .table-status thead>tr td:nth-of-type(7),.status-content .table-status tbody>tr th:nth-of-type(7),.status-content .table-status tbody>tr td:nth-of-type(7) {
+	width:130px
+}
