@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <base href="https://vndm.io/" /> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lịch Sử</title>
+    <link rel="stylesheet" href="Styles/bootstrap.css">
+    <link rel="stylesheet" href="Styles/fontawesome.css">
+    <link rel="stylesheet" href="Styles/common.css">
+    <link rel="stylesheet" href="Styles/history.css">
+    <link rel="stylesheet" href="Styles/toastr.css">
+    <link rel="stylesheet" href="Styles/bootstrap.datepicker.css">
+    <script src="Javascripts/jquery-3.1.1.min.js"></script>
+    <script src="Javascripts/alajax.1.2.js"></script>
+    <script src="Javascripts/function.js"></script>
+    <script src="Javascripts/history.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header-middle">
+                <div class="header-middle-inner fixed-top">
+                    <div class="container-fluid">
+                        <nav class="navbar navbar-expand-md navbar-light">
+                            <div class="navbar-toggler-menu">
+                                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon-01"></span>
+                                    <span class="navbar-toggler-icon-02"></span>
+                                    <span class="navbar-toggler-icon-03"></span>
+                                </button>
+                            </div>
+                            <a class="navbar-brand" href="https://vndm.io/"><img src="Images/logo.png" alt="VNDM"></a>
+                            <div class="collapse navbar-collapse" id="navbar">
+                                <div class="navbar-collapse-inner">
+                                    <ul class="navbar-nav m-auto">
+                                        <li>
+                                            <a href="market.html">THỊ TRƯỜNG</a>
+                                        </li>
+                                        <li>
+                                            <a href="news.html">TIN TỨC</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://suport.vndm.io/">HỖ TRỢ</a>
+                                        </li>
+                                    </ul>
+                                    <div class="nav-theme-language">
+                                        <nav class="nav-language">
+                                            <a href="javascript:void(0);" class="active" title="Tiếng Việt">VN</a>
+                                            <a href="language/en" title="English">EN</a>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                            <nav class="nav-language">
+                                <a href="javascript:void(0);" class="active" title="Tiếng Việt">VN</a>
+                                <a href="language/en" title="English">EN</a>
+                            </nav>
+                            <!--HTML when user logged-->
+                            <!--/.nav-language-->
+                            <div class="navbar-toggler-authed">
+                                <a href="#" class="navbar-toggler" style="display: block;" data-toggle="collapse" data-target="#navbar-authed" aria-controls="navbar-authed" aria-expanded="false" aria-label="Toggle navigation"></a>
+                            </div>
+                            <div class="ml-auto collapse navbar-collapse-authed" id="navbar-authed">
+                                <div class="navbar-collapse-authed-inner">
+                                    <div class="dropdown dropdown-lg">
+                                        <a href="#" class="btn-user-action" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">soncc2010</a>
+                                        <ul class="nav-user dropdown-menu">
+                                            <li>
+                                                <a href="balance.html"><i class="fa fa-balance-scale fa-fw"></i>Số Dư</a>
+                                            </li>
+                                            <li>
+                                                <a href="setting.html"><i class="fas fa-cog fa-fw"></i>Cài Đặt</a>
+                                            </li>
+                                            <li>
+                                                <a href="logout.html"><i class="fas fa-sign-out-alt fa-fw"></i>Thoát</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <ul class="nav-user-lg">
+                                        <li>
+                                            <a href="api.html"><i class="fa fa-bolt fa-fw"></i>API</a>
+                                        </li>
+                                        <li>
+                                            <a href="balance.html"><i class="fa fa-balance-scale fa-fw"></i>Số Dư</a>
+                                        </li>
+                                        <li class="dropdown dropright">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog fa-fw"></i>Cài Đặt</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="setting/notification.html"><i class="fas fa-bell fa-fw"></i>Thông Báo</a></li>
+                                                <li><a href="setting/2fa.html"><i class="fa fa-qrcode fa-fw"></i>Mật Khẩu 2 Lớp</a></li>
+                                                <li><a href="setting/security.html"><i class="fa fa-shield-alt fa-fw"></i>Chế độ Bảo Mật</a></li>
+                                                <li><a href="setting/password.html"><i class="fa fa-key fa-fw"></i>Thay Đổi Mật Khẩu</a></li>
+                                                <li><a href="setting/profile.html"><i class="fa fa-user fa-fw"></i>Thông Tin Cá Nhân</a></li>
+                                                <li><a href="setting/link.html"><i class="fa fa-link fa-fw"></i>Liên Kết Mạng Xã Hội</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown dropright active">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-history fa-fw"></i>Lịch Sử</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="history/trade.html"><i class="far fa-clock fa-fw"></i>Mua Bán</a></li>
+                                                <li class="dropdown dropright">
+                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-book fa-fw"></i>ĐặtLệnh</a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="history/order.html"><i class="fas fa-arrow-circle-right"></i>LỆNH GIỚI HẠN</a></li>
+                                                        <li><a href="history/margin.html"><i class="fas fa-arrow-circle-right"></i>LỆNH ĐÒN BẨY</a> </li>
+                                                        <li><a href="history/condition.html"><i class="fas fa-arrow-circle-right"></i>LỆNH ĐIỀU KIỆN</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="history/deposit.html"><i class="fa fa-plus fa-fw"></i>Nạp Tiền</a></li>
+                                                <li><a href="history/withdrawal.html"><i class="fa fa-minus fa-fw"></i>Rút Tiền</a></li>
+                                                <li><a href="history/transfer.html"><i class="fa fa-paper-plane fa-fw"></i>Chuyển Tiền</a></li>
+                                                <li><a href="history/voucher.html"><i class="fa fa-gift fa-fw"></i>Mã Nạp Tiền</a></li>
+                                                <li><a href="history/transaction.html"><i class="fas fa-exchange-alt fa-fw"></i>Giao Dịch</a></li>
+                                                <li><a href="history/login.html"><i class="fas fa-sign-in-alt fa-fw"></i>Đăng Nhập</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown dropright">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-calendar-check fa-fw"></i>Xác Nhận</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="verify/identity.html"><i class="fa fa-user fa-fw"></i>Thông Tin Cá Nhân</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="voucher.html"><i class="fa fa-gift fa-fw"></i>Mã Nạp Tiền</a>
+                                        </li>
+                                        <li>
+                                            <a href="transfer.html"><i class="fa fa-paper-plane fa-fw"></i>Chuyển Tiền</a>
+                                        </li>
+                                        <li>
+                                            <a href="affiliate.html"><i class="fa fa-users fa-fw"></i>Giới Thiệu Bạn Bè</a>
+                                        </li>
+                                        <li><a href="logout.html"><i class="fas fa-sign-out-alt fa-fw"></i>Thoát</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!--/.header-middle-->
+        </header>
+        <!--/.header-->
+        <main class="main">
+            <div class="container-fluid">
+                <div class="main-wrap">
+                    <div class="sidebar-box">
+                        <div class="sidebar-box-inner">
+                            <nav>
+                                <ul class="sidebar-menu">
+                                    <li>
+                                        <a href="api.html"><i class="fa fa-bolt fa-fw"></i>API</a>
+                                    </li>
+                                    <li>
+                                        <a href="balance.html"><i class="fa fa-balance-scale fa-fw"></i>Số Dư</a>
+                                    </li>
+                                    <li class="dropdown dropright">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog fa-fw"></i>Cài Đặt</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="setting/notification.html"><i class="fas fa-bell fa-fw"></i>Thông Báo</a></li>
+                                            <li><a href="setting/2fa.html"><i class="fa fa-qrcode fa-fw"></i>Mật Khẩu 2 Lớp</a></li>
+                                            <li><a href="setting/security.html"><i class="fa fa-shield-alt fa-fw"></i>Chế độ Bảo Mật</a></li>
+                                            <li><a href="setting/password.html"><i class="fa fa-key fa-fw"></i>Thay Đổi Mật Khẩu</a></li>
+                                            <li><a href="setting/profile.html"><i class="fa fa-user fa-fw"></i>Thông Tin Cá Nhân</a></li>
+                                            <li><a href="setting/link.html"><i class="fa fa-link fa-fw"></i>Liên Kết Mạng Xã Hội</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown dropright active">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-history fa-fw"></i>Lịch Sử</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="history/trade.html"><i class="far fa-clock fa-fw"></i>Mua Bán</a></li>
+                                            <li class="dropdown">
+                                                <a href="history/order.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"><i class="fa fa-book fa-fw"></i>ĐặtLệnh</a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="history/order.html">LỆNH GIỚI HẠN</a></li>
+                                                    <li><a href="history/margin.html">LỆNH ĐÒN BẨY</a> </li>
+                                                    <li><a href="history/condition.html">LỆNH ĐIỀU KIỆN</a> </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="history/deposit.html"><i class="fa fa-plus fa-fw"></i>Nạp Tiền</a></li>
+                                            <li><a href="history/withdrawal.html"><i class="fa fa-minus fa-fw"></i>Rút Tiền</a></li>
+                                            <li><a href="history/transfer.html"><i class="fa fa-paper-plane fa-fw"></i>Chuyển Tiền</a></li>
+                                            <li><a href="history/voucher.html"><i class="fa fa-gift fa-fw"></i>Mã Nạp Tiền</a></li>
+                                            <li><a href="history/transaction.html"><i class="fas fa-exchange-alt fa-fw"></i>Giao Dịch</a></li>
+                                            <li><a href="history/login.html"><i class="fas fa-sign-in-alt fa-fw"></i>Đăng Nhập</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown dropright">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-calendar-check fa-fw"></i>Xác Nhận</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="verify/identity.html"><i class="fa fa-user fa-fw"></i>Thông Tin Cá Nhân</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="voucher.html"><i class="fa fa-gift fa-fw"></i>Mã Nạp Tiền</a>
+                                    </li>
+                                    <li>
+                                        <a href="transfer.html"><i class="fa fa-paper-plane fa-fw"></i>Chuyển Tiền</a>
+                                    </li>
+                                    <li>
+                                        <a href="affiliate.html"><i class="fa fa-users fa-fw"></i>Giới Thiệu Bạn Bè</a>
+                                    </li>
+                                    <li>
+                                        <a href="logout.html"><i class="fas fa-sign-out-alt fa-fw"></i>Thoát</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!--/.sidebar-->
+                    <div class="main-content">
+                        <div class="history-content">
+                            <div class="page-header">
+                                <h1 class="page-title">Lịch sử</h1>
+                                <div class="page-header-right">
+                                    <div class="input-group">
+                                        <div class="input-group-append">
+                                            <button type="button" class="btn btn-outline-default" data-toggle="collapse" data-target="#navlist"><i class="far fa-clock fa-fw"></i>MUA BÁN</button>
+                                            <button type="button" class="btn btn-outline-default dropdown-toggle" data-toggle="collapse" data-target="#navlist">
+                                                <span class="sr-only">Danh Sách Lịch Sử</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <nav id="navlist" class="nav-list">
+                                <ul>
+                                    <li class="active">
+                                        <a href="history/trade.html"><i class="far fa-clock fa-fw"></i>MUA BÁN</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" id="menuList" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-book fa-fw"></i> ĐặtLệnh</a>
+                                          <div class="dropdown-menu" aria-labelledby="menuList">
+                                            <a class="dropdown-item" href="history/order.html">LỆNH GIỚI HẠN</a>
+                                            <a class="dropdown-item" href="history/margin.html">LỆNH ĐÒN BẨY</a>
+                                            <a class="dropdown-item" href="history/condition.html">LỆNH ĐIỀU KIỆN</a> 
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="history/deposit.html"><i class="fa fa-plus fa-fw"></i>NẠP TIỀN</a>
+                                    </li>
+                                    <li>
+                                        <a href="history/withdrawal.html"><i class="fa fa-minus fa-fw"></i>RÚT TIỀN</a>
+                                    </li>
+                                    <li>
+                                        <a href="history/transfer.html"><i class="fa fa-paper-plane fa-fw"></i>CHUYỂN TIỀN</a>
+                                    </li>
+                                    <li>
+                                        <a href="history/voucher.html"><i class="fa fa-gift fa-fw"></i>MÃ NẠP TIỀN</a>
+                                    </li>
+                                    <li>
+                                        <a href="history/transaction.html"><i class="fas fa-exchange-alt fa-fw"></i>GIAO DỊCH</a>
+                                    </li>
+                                    <li>
+                                        <a href="history/login.html"><i class="fas fa-sign-in-alt fa-fw"></i>ĐĂNG NHẬP</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <!--/.nav-list-->
+                            <div class="history-body">
+                                <div class="sec-header">
+                                    <div class="wrap">
+                                        <form name="frmRange" data-toggle="validator" onsubmit="return false;" class="form-inline">
+                                            <div class="date-from form-group">
+                                                <input type="text" name="xFrom" value="15-10-2018" class="form-control" placeholder="Từ Ngày" data-remote="range.php" required="YES">
+                                            </div>
+                                            <div class="date-to form-group mr-3">
+                                                <input type="text" name="xTo" value="15-10-2018" class="form-control" placeholder="Đến Ngày" data-remote="range.php" required="YES">
+                                            </div>
+                                            <button type="submit" id="btnRange" class="btn btn-warning text-uppercase">Áp Dụng</button>
+                                        </form>
+                                        <form name="frmSearch" action="filter.html" method="post" data-section="TRADE" data-column="ALL">
+                                            <div class="input-search-group">
+                                                <input name="xValue" type="search" id="historySearch" class="form-control">
+                                                <label class="btn-search" for="historySearch">Search</label>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!--/.history-search-->
+                                <div id="tradeContainer">
+                                    <center>Đang tải ...</center>
+                                </div>
+                                <script type="text/javascript">
+                                <!--
+                                viewTrade(1, 15, 'Date', 'DESC');
+
+                                $('form[name="frmSearch"]').alajax({
+                                    success: function() {
+                                        viewTrade(1, 15, 'Date', 'DESC');
+                                    }
+                                });
+
+                                $('#btnRange').on('click', function() {
+                                    viewTrade(1, 15, 'Date', 'DESC');
+                                });
+                                //-->
+                                </script>
+                            </div>
+                            <!--/.history-body-->
+                        </div>
+                        <!--/.history-content-->
+                    </div>
+                    <!--/.main-content-->
+                </div>
+                <!--/main-wrap-->
+            </div>
+            <!--/.container-fluid-->
+        </main>
+        <!--/.main-->
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="container-fluid">
+                    <nav class="d-flex">
+                        <ul class="footer-menu m-auto">
+                            <li><a href="fees.html">Biểu Phí</a></li>
+                            <li><a href="faq.html">Hỏi Đáp</a></li>
+                            <li><a href="custom/terms-of-use.html">Điều Khoản Sử Dụng</a></li>
+                            <li><a href="custom/privacy-policy.html">Chính Sách Bảo Mật</a></li>
+                            <li><a href="https://api.vndm.io/">Tài Liệu API</a></li>
+                            <li><a href="status.html">Trạng Thái</a></li>
+                            <li><a href="contact.html">Liên Hệ</a></li>
+                        </ul>
+                        <ul class="footer-social ml-auto">
+                            <li><a class="facebook" href="#" target="_blank"><i class="fab fa-facebook-f fa-fw"></i></a></li>
+                            <li><a class="twitter" href="#" target="_blank"><i class="fab fa-twitter fa-fw"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container-fluid">
+                    <p class="copyright">Bản Quyền &copy; 2018 vndm.io</p>
+                </div>
+            </div>
+        </footer>
+        <!--/.footer-->
+    </div>
+    <!--/.wrapper-->
+    <div class="widget-chat">
+        <a class="chatHandle" href="javascript:void(0);"><img src="Images/trochuyen.png" alt="Trò Chuyện"></a>
+        <div class="widget-chat-content">
+            <form name="frmChat" onSubmit="return false;" method="post" data-toggle="validator">
+                <div class="panel-chat">
+                    <div class="panel-chat-header">
+                        <a class="btn-close-chat">Trò Chuyện</a>
+                    </div>
+                    <div class="panel-chat-body">
+                        <div id="listMessage" class="panel-chat-content"></div>
+                    </div>
+                    <div class="panel-chat-footer">
+                        <div class="panel-group-form">
+                            <div class="input-group">
+                                <input type="text" name="typeMessage" class="form-control" required="YES">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-primary" onClick="sendMessage(this.form.typeMessage.value);">
+                                        <i class="fa fa-paper-plane fa-fw"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--/.widget-chat-->
+    <link rel="stylesheet" href="Styles/chat.css">
+    <script src="Javascripts/chat.js"></script>
+    <script type="text/javascript">
+    <!--    
+    $(document).ready(function() {
+        setInterval(function() {
+            loadMessage();
+        }, 2000);
+    });
+    //-->
+    </script>
+    <script src="Javascripts/popper.min.js"></script>
+    <script src="Javascripts/bootstrap.min.js"></script>
+    <script src="Javascripts/common.js"></script>
+    <script src="Javascripts/toastr.js"></script>
+    <script src="Javascripts/validator.js"></script>
+    <script src="Javascripts/clipboard.js"></script>
+    <script src="Javascripts/moment.min.js"></script>
+    <script src="Javascripts/vi.js"></script>
+    <script src="Javascripts/bootstrap.datepicker.js"></script>
+    <script src="https://socket.vndm.io/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+    <!--
+    var market = io.connect('wss://socket.vndm.io/MARKET', { 'forceNew': true });
+    var initialize = io.connect('wss://socket.vndm.io/INITIALIZE', { 'forceNew': true });
+
+    market.on('CHANGE', function(jsonData) {
+        $('.bid_' + jsonData.Market).html(parseFloat(jsonData.Data.Bid));
+        $('.ask_' + jsonData.Market).html(parseFloat(jsonData.Data.Ask));
+        $('.last_' + jsonData.Market).html(parseFloat(jsonData.Data.Last));
+    });
+
+    initialize.on('MARKET', function(jsonData) {
+        for (i in jsonData) {
+            $('.bid_' + jsonData[i].Market).html(parseFloat(jsonData[i].Bid));
+            $('.ask_' + jsonData[i].Market).html(parseFloat(jsonData[i].Ask));
+            $('.last_' + jsonData[i].Market).html(parseFloat(jsonData[i].Last));
+        }
+    });
+    //-->
+    </script>
+    <script type="text/javascript">
+    <!--
+
+    $(document).ajaxStart(function() {
+        $('[data-toggle="tooltip"]').popover('hide');
+        $('[data-toggle="popover"]').popover('hide');
+    });
+
+    $(document).ready(function() {
+
+        $('input[name=xFrom]').datetimepicker({
+            'format': 'DD-MM-YYYY',
+            'minDate': new Date(new Date().setDate(new Date().getDate() - 90)),
+        });
+        $('input[name=xTo]').datetimepicker({
+            'format': 'DD-MM-YYYY',
+            'maxDate': new Date()
+        });
+
+        $('input[name=xFrom]').on("dp.change", function(e) {
+            $('input[name=xTo]').data("DateTimePicker").minDate(e.date);
+        });
+
+        $('input[name=xTo]').on("dp.change", function(e) {
+            $('input[name=xFrom]').data("DateTimePicker").maxDate(e.date);
+        });
+
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": true,
+            "positionClass": "toast-bottom-left",
+            "preventDuplicates": true,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "3000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    });
+    //-->
+    </script>
+</body>
+
+</html>
