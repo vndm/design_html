@@ -48,7 +48,7 @@ img {
 .container-fluid {
 	margin:0 auto
 }
-@media( max-width: 12400px){
+@media( max-width: 1240px){
 	.container-fluid {
 		padding-left: 15px;
 		padding-right: 15px;
@@ -1293,7 +1293,7 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 }
 .section-form .title {
 	color:#fff;
-	margin-bottom:6.6rem;
+	margin-bottom:4.6rem;
 	text-align:center;
 	text-transform:uppercase;
 	font-size:3rem
@@ -1310,7 +1310,7 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 	color:#fff
 }
 .section-form .form-check-group {
-	margin-top:3.7rem;
+	margin-top:2.7rem;
 	margin-bottom:1.5rem
 }
 .section-form .form-group-info {
