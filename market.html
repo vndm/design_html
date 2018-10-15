@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <base href="https://vndm.io/" /> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thị Trường</title>
+    <link rel="stylesheet" href="Styles/bootstrap.css">
+    <link rel="stylesheet" href="Styles/fontawesome.css">
+    <link rel="stylesheet" href="Styles/common.css">
+    <link rel="stylesheet" href="Styles/market.css">
+    <link rel="stylesheet" href="Styles/bootstrap.sortable.css">
+    <script src="Javascripts/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header-middle">
+                <div class="header-middle-inner fixed-top">
+                    <div class="container-fluid">
+                        <nav class="navbar navbar-expand-md navbar-light">
+                            <div class="navbar-toggler-menu">
+                                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon-01"></span>
+                                    <span class="navbar-toggler-icon-02"></span>
+                                    <span class="navbar-toggler-icon-03"></span>
+                                </button>
+                            </div>
+                            <a class="navbar-brand" href="https://vndm.io/"><img src="Images/logo.png" alt="VNDM"></a>
+                            <div class="collapse navbar-collapse" id="navbar">
+                                <div class="navbar-collapse-inner">
+                                    <ul class="navbar-nav m-auto">
+                                        <li class="active">
+                                            <a href="market.html">THỊ TRƯỜNG</a>
+                                        </li>
+                                        <li>
+                                            <a href="news.html">TIN TỨC</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://suport.vndm.io/">HỖ TRỢ</a>
+                                        </li>
+                                    </ul>
+                                    <div class="nav-theme-language">
+                                        <nav class="nav-language">
+                                            <a href="javascript:void(0);" class="active" title="Tiếng Việt">VN</a>
+                                            <a href="language/en" title="English">EN</a>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                            <nav class="nav-language">
+                                <a href="javascript:void(0);" class="active" title="Tiếng Việt">VN</a>
+                                <a href="language/en" title="English">EN</a>
+                            </nav>
+                            <!--HTML when user not yet login-->
+                            <div class="navbar-toggler-user">
+                                <a href="#" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-user" aria-controls="navbar-user" aria-expanded="false" aria-label="Toggle navigation"></a>
+                            </div>
+                            <div class="ml-auto collapse navbar-collapse-user" id="navbar-user">
+                                <div class="navbar-collapse-user-inner">
+                                    <ul class="nav-user">
+                                        <li><a href="login.html" class="btn-login">ĐĂNG NHẬP</a></li>
+                                        <li><a href="register.html" class="btn-register">ĐĂNG KÝ</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--END HTML when user not yet login-->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!--/.header-middle-->
+        </header>
+        <!--/.header-->
+        <main class="main">
+            <div class="market-block">
+                <div class="container-fluid">
+                    <div class="sec-header">
+                        <div>
+                            <h4 class="text-uppercase mt-0 mb-0">Thị Trường Bitcoin (BTC)</h4>
+                            <h6>Tổng Khổi Lượng : <span id="totalETH" data-market="#marketETH">72</span> ETH</h6>
+                        </div>
+                        <div>
+                            <div class="input-search-group">
+                                <input type="search" id="searchBTC" class="form-control">
+                                <label class="btn-search" for="searchBTC">Search</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="market-row mb-5">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-nowrap sortable" id="marketBTC">
+                                <thead>
+                                    <tr>
+                                        <th width="35" data-defaultsort="disabled">&nbsp;</th>
+                                        <th class="text-center">Thị Trường</th>
+                                        <th class="text-center">Thay Đổi</th>
+                                        <th class="text-center" data-defaultsort="desc">Khối Lượng</th>
+                                        <th class="text-center">Giá Cuối</th>
+                                        <th class="text-center">Giá Mua</th>
+                                        <th class="text-center">Giá Bán</th>
+                                        <th class="text-center">Giá Cao 24H</th>
+                                        <th class="text-center">Giá Thấp 24H</th>
+                                        <th class="text-center">Chênh Lệch</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="market marketBTC">
+                                        <td class="text-center">
+                                            <a href="javascript:void(0);" class="btn-favorite" data-market="BCH-BTC"><i class="fas fa-star"></i></a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="trade/BCH-BTC">BCH/BTC</a>
+                                        </td>
+                                        <td class="text-center" data-value="29122.37">
+                                            <div class="change_BCH-BTC">
+                                                <span class="text-success"><strong>+29122.37%</strong> <i class="fas fa-arrow-up fa-fw"></i></span>
+                                            </div>
+                                        </td>
+                                        <td align="center" data-value="6">
+                                            <span class="volume_BCH-BTC">6</span>
+                                        </td>
+                                        <td align="right" data-value="5552.25000000">
+                                            <span class="last_BCH-BTC">5,552.25000000</span>
+                                        </td>
+                                        <td align="right" data-value="5552.25000000">
+                                            <span class="ask_BCH-BTC">5,552.25000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="bid_BCH-BTC">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="">
+                                            <span class="high_BCH-BTC">5,552.25000000</span>
+                                        </td>
+                                        <td align="right" data-value="5552.25000000">
+                                            <span class="low_BCH-BTC">5,552.25000000</span>
+                                        </td>
+                                        <td align="right" data-value="5552.25000000">
+                                            <span class="spread_BCH-BTC">5,552.25000000</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="market marketBTC">
+                                        <td class="text-center">
+                                            <a href="javascript:void(0);" class="btn-favorite" data-market="BTG-BTC"><i class="fas fa-star"></i></a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="trade/BTG-BTC">BTG/BTC</a>
+                                        </td>
+                                        <td class="text-center" data-value="-24.24">
+                                            <div class="change_BTG-BTC">
+                                                <span class="text-danger"><strong>-24.24%</strong> <i class="fas fa-arrow-down fa-fw"></i></span>
+                                            </div>
+                                        </td>
+                                        <td align="center" data-value="0">
+                                            <span class="volume_BTG-BTC">0</span>
+                                        </td>
+                                        <td align="right" data-value="0.49999999">
+                                            <span class="last_BTG-BTC">0.49999999</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="ask_BTG-BTC">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="bid_BTG-BTC">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="">
+                                            <span class="high_BTG-BTC">0.50000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.49999999">
+                                            <span class="low_BTG-BTC">0.49999999</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="spread_BTG-BTC">0.00000000</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="market marketBTC">
+                                        <td class="text-center">
+                                            <a href="javascript:void(0);" class="btn-favorite" data-market="DASH-BTC"><i class="fas fa-star"></i></a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="trade/DASH-BTC">DASH/BTC</a>
+                                        </td>
+                                        <td class="text-center" data-value="-74.68">
+                                            <div class="change_DASH-BTC">
+                                                <span class="text-danger"><strong>-74.68%</strong> <i class="fas fa-arrow-down fa-fw"></i></span>
+                                            </div>
+                                        </td>
+                                        <td align="center" data-value="6">
+                                            <span class="volume_DASH-BTC">6</span>
+                                        </td>
+                                        <td align="right" data-value="2.00000000">
+                                            <span class="last_DASH-BTC">2.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="2.00000000">
+                                            <span class="ask_DASH-BTC">2.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="1.00000000">
+                                            <span class="bid_DASH-BTC">1.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="">
+                                            <span class="high_DASH-BTC">2.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="2.00000000">
+                                            <span class="low_DASH-BTC">2.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="1.00000000">
+                                            <span class="spread_DASH-BTC">1.00000000</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="market marketBTC">
+                                        <td class="text-center">
+                                            <a href="javascript:void(0);" class="btn-favorite" data-market="ETC-BTC"><i class="fas fa-star"></i></a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="trade/ETC-BTC">ETC/BTC</a>
+                                        </td>
+                                        <td class="text-center" data-value="-33.33">
+                                            <div class="change_ETC-BTC">
+                                                <span class="text-danger"><strong>-33.33%</strong> <i class="fas fa-arrow-down fa-fw"></i></span>
+                                            </div>
+                                        </td>
+                                        <td align="center" data-value="0">
+                                            <span class="volume_ETC-BTC">0</span>
+                                        </td>
+                                        <td align="right" data-value="0.20000000">
+                                            <span class="last_ETC-BTC">0.20000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="ask_ETC-BTC">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="10.00000000">
+                                            <span class="bid_ETC-BTC">10.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="">
+                                            <span class="high_ETC-BTC">0.20000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.20000000">
+                                            <span class="low_ETC-BTC">0.20000000</span>
+                                        </td>
+                                        <td align="right" data-value="10.00000000">
+                                            <span class="spread_ETC-BTC">10.00000000</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="market marketBTC">
+                                        <td class="text-center">
+                                            <a href="javascript:void(0);" class="btn-favorite" data-market="ETH-BTC"><i class="fas fa-star"></i></a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="trade/ETH-BTC">ETH/BTC</a>
+                                        </td>
+                                        <td class="text-center" data-value="0">
+                                            <div class="change_ETH-BTC">
+                                                <strong>0%</strong>
+                                            </div>
+                                        </td>
+                                        <td align="center" data-value="119">
+                                            <span class="volume_ETH-BTC">119</span>
+                                        </td>
+                                        <td align="right" data-value="50.00000000">
+                                            <span class="last_ETH-BTC">50.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="ask_ETH-BTC">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="bid_ETH-BTC">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="">
+                                            <span class="high_ETH-BTC">50.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="40.00000000">
+                                            <span class="low_ETH-BTC">40.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="spread_ETH-BTC">0.00000000</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="market marketBTC">
+                                        <td class="text-center">
+                                            <a href="javascript:void(0);" class="btn-favorite" data-market="LTC-BTC"><i class="fas fa-star"></i></a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="trade/LTC-BTC">LTC/BTC</a>
+                                        </td>
+                                        <td class="text-center" data-value="0">
+                                            <div class="change_LTC-BTC">
+                                                <strong>0%</strong>
+                                            </div>
+                                        </td>
+                                        <td align="center" data-value="0">
+                                            <span class="volume_LTC-BTC">0</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="last_LTC-BTC">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="ask_LTC-BTC">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="bid_LTC-BTC">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="">
+                                            <span class="high_LTC-BTC">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="low_LTC-BTC">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="spread_LTC-BTC">0.00000000</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="market marketBTC">
+                                        <td class="text-center">
+                                            <a href="javascript:void(0);" class="btn-favorite" data-market="XRP-BTC"><i class="fas fa-star"></i></a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="trade/XRP-BTC">XRP/BTC</a>
+                                        </td>
+                                        <td class="text-center" data-value="0">
+                                            <div class="change_XRP-BTC">
+                                                <strong>0%</strong>
+                                            </div>
+                                        </td>
+                                        <td align="center" data-value="0">
+                                            <span class="volume_XRP-BTC">0</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="last_XRP-BTC">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="ask_XRP-BTC">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="bid_XRP-BTC">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="">
+                                            <span class="high_XRP-BTC">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="low_XRP-BTC">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="spread_XRP-BTC">0.00000000</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="market marketBTC">
+                                        <td class="text-center">
+                                            <a href="javascript:void(0);" class="btn-favorite" data-market="ZEC-BTC"><i class="fas fa-star"></i></a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="trade/ZEC-BTC">ZEC/BTC</a>
+                                        </td>
+                                        <td class="text-center" data-value="0">
+                                            <div class="change_ZEC-BTC">
+                                                <strong>0%</strong>
+                                            </div>
+                                        </td>
+                                        <td align="center" data-value="1">
+                                            <span class="volume_ZEC-BTC">1</span>
+                                        </td>
+                                        <td align="right" data-value="2.00000000">
+                                            <span class="last_ZEC-BTC">2.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="ask_ZEC-BTC">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="bid_ZEC-BTC">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="">
+                                            <span class="high_ZEC-BTC">2.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="2.00000000">
+                                            <span class="low_ZEC-BTC">2.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="spread_ZEC-BTC">0.00000000</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="market-row mb-5">
+                        <div class="sec-header">
+                            <div>
+                                <h4 class="text-uppercase mt-0 mb-0">Thị Trường Bitcoin (BTC)</h4>
+                                <h6>Tổng Khổi Lượng : <span id="totalETH" data-market="#marketETH">0</span> ETH</h6>
+                            </div>
+                            <div>
+                                <div class="input-search-group">
+                                    <input type="search" id="searchETH" class="form-control">
+                                    <label class="btn-search" for="searchETH">Search</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-nowrap sortable" id="marketETH">
+                                <thead>
+                                    <tr>
+                                        <th width="35" data-defaultsort="disabled">&nbsp;</th>
+                                        <th class="text-center">Thị Trường</th>
+                                        <th class="text-center">Thay Đổi</th>
+                                        <th class="text-center" data-defaultsort="desc">Khối Lượng</th>
+                                        <th class="text-center">Giá Cuối</th>
+                                        <th class="text-center">Giá Mua</th>
+                                        <th class="text-center">Giá Bán</th>
+                                        <th class="text-center">Giá Cao 24H</th>
+                                        <th class="text-center">Giá Thấp 24H</th>
+                                        <th class="text-center">Chênh Lệch</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="market marketETH">
+                                        <td class="text-center">
+                                            <a href="javascript:void(0);" class="btn-favorite" data-market="BCH-ETH"><i class="fas fa-star"></i></a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="trade/BCH-ETH">BCH/ETH</a>
+                                        </td>
+                                        <td class="text-center" data-value="0">
+                                            <div class="change_BCH-ETH">
+                                                <strong>0%</strong>
+                                            </div>
+                                        </td>
+                                        <td align="center" data-value="8">
+                                            <span class="volume_BCH-ETH">8</span>
+                                        </td>
+                                        <td align="right" data-value="2.00000000">
+                                            <span class="last_BCH-ETH">2.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="ask_BCH-ETH">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="bid_BCH-ETH">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="">
+                                            <span class="high_BCH-ETH">6.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="2.00000000">
+                                            <span class="low_BCH-ETH">2.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="spread_BCH-ETH">0.00000000</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="market marketETH">
+                                        <td class="text-center">
+                                            <a href="javascript:void(0);" class="btn-favorite" data-market="BTG-ETH"><i class="fas fa-star"></i></a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="trade/BTG-ETH">BTG/ETH</a>
+                                        </td>
+                                        <td class="text-center" data-value="0">
+                                            <div class="change_BTG-ETH">
+                                                <strong>0%</strong>
+                                            </div>
+                                        </td>
+                                        <td align="center" data-value="0">
+                                            <span class="volume_BTG-ETH">0</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="last_BTG-ETH">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="ask_BTG-ETH">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="bid_BTG-ETH">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="">
+                                            <span class="high_BTG-ETH">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="low_BTG-ETH">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="spread_BTG-ETH">0.00000000</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="market marketETH">
+                                        <td class="text-center">
+                                            <a href="javascript:void(0);" class="btn-favorite" data-market="DASH-ETH"><i class="fas fa-star"></i></a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="trade/DASH-ETH">DASH/ETH</a>
+                                        </td>
+                                        <td class="text-center" data-value="0">
+                                            <div class="change_DASH-ETH">
+                                                <strong>0%</strong>
+                                            </div>
+                                        </td>
+                                        <td align="center" data-value="56">
+                                            <span class="volume_DASH-ETH">56</span>
+                                        </td>
+                                        <td align="right" data-value="5552.25000000">
+                                            <span class="last_DASH-ETH">5,552.25000000</span>
+                                        </td>
+                                        <td align="right" data-value="5552.25000000">
+                                            <span class="ask_DASH-ETH">5,552.25000000</span>
+                                        </td>
+                                        <td align="right" data-value="110.00000000">
+                                            <span class="bid_DASH-ETH">110.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="">
+                                            <span class="high_DASH-ETH">5,552.25000000</span>
+                                        </td>
+                                        <td align="right" data-value="5552.25000000">
+                                            <span class="low_DASH-ETH">5,552.25000000</span>
+                                        </td>
+                                        <td align="right" data-value="5442.25000000">
+                                            <span class="spread_DASH-ETH">5,442.25000000</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="market marketETH">
+                                        <td class="text-center">
+                                            <a href="javascript:void(0);" class="btn-favorite" data-market="ETC-ETH"><i class="fas fa-star"></i></a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="trade/ETC-ETH">ETC/ETH</a>
+                                        </td>
+                                        <td class="text-center" data-value="-33.33">
+                                            <div class="change_ETC-ETH">
+                                                <span class="text-danger"><strong>-33.33%</strong> <i class="fas fa-arrow-down fa-fw"></i></span>
+                                            </div>
+                                        </td>
+                                        <td align="center" data-value="5">
+                                            <span class="volume_ETC-ETH">5</span>
+                                        </td>
+                                        <td align="right" data-value="2.00000000">
+                                            <span class="last_ETC-ETH">2.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="ask_ETC-ETH">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="5552.25000000">
+                                            <span class="bid_ETC-ETH">5,552.25000000</span>
+                                        </td>
+                                        <td align="right" data-value="">
+                                            <span class="high_ETC-ETH">3.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="2.00000000">
+                                            <span class="low_ETC-ETH">2.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="5552.25000000">
+                                            <span class="spread_ETC-ETH">5,552.25000000</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="market marketETH">
+                                        <td class="text-center">
+                                            <a href="javascript:void(0);" class="btn-favorite" data-market="LTC-ETH"><i class="fas fa-star"></i></a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="trade/LTC-ETH">LTC/ETH</a>
+                                        </td>
+                                        <td class="text-center" data-value="0">
+                                            <div class="change_LTC-ETH">
+                                                <strong>0%</strong>
+                                            </div>
+                                        </td>
+                                        <td align="center" data-value="1">
+                                            <span class="volume_LTC-ETH">1</span>
+                                        </td>
+                                        <td align="right" data-value="5.00000000">
+                                            <span class="last_LTC-ETH">5.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="ask_LTC-ETH">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="bid_LTC-ETH">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="">
+                                            <span class="high_LTC-ETH">5.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="5.00000000">
+                                            <span class="low_LTC-ETH">5.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="spread_LTC-ETH">0.00000000</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="market marketETH">
+                                        <td class="text-center">
+                                            <a href="javascript:void(0);" class="btn-favorite" data-market="XRP-ETH"><i class="fas fa-star"></i></a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="trade/XRP-ETH">XRP/ETH</a>
+                                        </td>
+                                        <td class="text-center" data-value="0">
+                                            <div class="change_XRP-ETH">
+                                                <strong>0%</strong>
+                                            </div>
+                                        </td>
+                                        <td align="center" data-value="2">
+                                            <span class="volume_XRP-ETH">2</span>
+                                        </td>
+                                        <td align="right" data-value="0.50000000">
+                                            <span class="last_XRP-ETH">0.50000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="ask_XRP-ETH">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="bid_XRP-ETH">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="">
+                                            <span class="high_XRP-ETH">0.50000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.50000000">
+                                            <span class="low_XRP-ETH">0.50000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="spread_XRP-ETH">0.00000000</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="market marketETH">
+                                        <td class="text-center">
+                                            <a href="javascript:void(0);" class="btn-favorite" data-market="ZEC-ETH"><i class="fas fa-star"></i></a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="trade/ZEC-ETH">ZEC/ETH</a>
+                                        </td>
+                                        <td class="text-center" data-value="0">
+                                            <div class="change_ZEC-ETH">
+                                                <strong>0%</strong>
+                                            </div>
+                                        </td>
+                                        <td align="center" data-value="0">
+                                            <span class="volume_ZEC-ETH">0</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="last_ZEC-ETH">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="ask_ZEC-ETH">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="bid_ZEC-ETH">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="">
+                                            <span class="high_ZEC-ETH">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="low_ZEC-ETH">0.00000000</span>
+                                        </td>
+                                        <td align="right" data-value="0.00000000">
+                                            <span class="spread_ZEC-ETH">0.00000000</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <hr class="m-0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--/.main-->
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="container-fluid">
+                    <nav class="d-flex">
+                        <ul class="footer-menu m-auto">
+                            <li><a href="fees.html">Biểu Phí</a></li>
+                            <li><a href="faq.html">Hỏi Đáp</a></li>
+                            <li><a href="custom/terms-of-use.html">Điều Khoản Sử Dụng</a></li>
+                            <li><a href="custom/privacy-policy.html">Chính Sách Bảo Mật</a></li>
+                            <li><a href="https://api.vndm.io/">Tài Liệu API</a></li>
+                            <li><a href="status.html">Trạng Thái</a></li>
+                            <li><a href="contact.html">Liên Hệ</a></li>
+                        </ul>
+                        <ul class="footer-social ml-auto">
+                            <li><a class="facebook" href="#" target="_blank"><i class="fab fa-facebook-f fa-fw"></i></a></li>
+                            <li><a class="twitter" href="#" target="_blank"><i class="fab fa-twitter fa-fw"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container-fluid">
+                    <p class="copyright">Bản Quyền &copy; 2018 vndm.io</p>
+                </div>
+            </div>
+        </footer>
+        <!--/.footer-->
+    </div>
+    <!--/.wrapper-->
+    <div class="widget-chat">
+        <a class="chatHandle" href="javascript:void(0);"><img src="Images/trochuyen.png" alt="Trò Chuyện"></a>
+        <div class="widget-chat-content">
+            <form name="frmChat" onSubmit="return false;" method="post" data-toggle="validator">
+                <div class="panel-chat">
+                    <div class="panel-chat-header">
+                        <a class="btn-close-chat">Trò Chuyện</a>
+                    </div>
+                    <div class="panel-chat-body">
+                        <div id="listMessage" class="panel-chat-content"></div>
+                    </div>
+                    <div class="panel-chat-footer">
+                        <br />
+                        <a href="login.html">Đăng Nhập Để Trò Chuyện</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--/.widget-chat-->
+    <link rel="stylesheet" href="Styles/chat.css">
+    <script src="Javascripts/chat.js"></script>
+    <script type="text/javascript">
+    <!--    
+    $(document).ready(function() {
+        setInterval(function() {
+            loadMessage();
+        }, 2000);
+    });
+    //-->
+    </script>
+    <script src="Javascripts/popper.min.js"></script>
+    <script src="Javascripts/bootstrap.min.js"></script>
+    <script src="Javascripts/bootstrap.sortable.js"></script>
+    <script src="Javascripts/common.js"></script>
+    <script src="Javascripts/jquery.number.js"></script>
+    <script src="https://socket.vndm.io/socket.io/socket.io.js"></script>
+    <script src="Javascripts/market.js"></script>
+    <script type="text/javascript">
+    <!--
+    $(document).ready(function() {
+        updateTotal();
+
+        $('input[type="search"]').on('keyup', function() {
+            var keyword = $(this).val();
+
+            $('#market' + $(this).data('market') + ' tbody > tr').each(function() {
+                if ($(this).text().search(new RegExp(keyword, "i")) < 0) {
+                    $(this).fadeOut();
+                } else {
+                    if (!$(this).hasClass('collapse')) {
+                        $(this).show();
+                    }
+                }
+            });
+        });
+
+        var marketFavorites = JSON.parse(localStorage.getItem('marketFavorites')) || [];
+        $.each(marketFavorites, function(key, marketFavorite) {
+            $('a[data-market="' + marketFavorite + '"] i').addClass('text-warning');
+            $('a[data-market="' + marketFavorite + '"]').parent().parent().addClass('marketFavorite');
+        });
+
+        $(document).on('click', '.btn-favorite', function(e) {
+            var marketIndex = marketFavorites.indexOf($(this).data('market'));
+            if (marketIndex == -1) {
+                $(this).find('i').addClass('text-warning');
+                marketFavorites.push($(this).data('market'));
+                $(this).parent().parent().addClass('marketFavorite');
+            } else {
+                $(this).find('i').removeClass('text-warning');
+                marketFavorites.splice(marketIndex, 1);
+                $(this).parent().parent().removeClass('marketFavorite');
+            }
+            localStorage.setItem('marketFavorites', JSON.stringify(marketFavorites));
+        });
+    });
+    //-->
+    </script>
+</body>
+
+</html>
