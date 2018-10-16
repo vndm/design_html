@@ -2432,7 +2432,8 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 		position:relative;
 		padding-right:1.1rem;
 		text-decoration:none;
-		font-weight:500
+		font-weight:500;
+		margin-left: 1.5rem;
 	}
 	.btn-user-action:after {
 		content:"";
@@ -2474,7 +2475,6 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 	}
 	.nav-user.dropdown-menu>li {
 		font-size:1.3rem;
-		margin-bottom:1.8rem;
 		display:block
 	}
 	.nav-user.dropdown-menu>li:last-child {
