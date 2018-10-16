@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <base href="https://vndm.io/" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thị Trường Ethereum Classic / Bitcoin</title>
+    <link rel="stylesheet" href="Styles/bootstrap.css">
+    <link rel="stylesheet" href="Styles/fontawesome.css">
+    <link rel="stylesheet" href="Styles/common.css">
+    <link rel="stylesheet" href="Styles/trade.desktop.css">
+    <link rel="stylesheet" href="Styles/toastr.css">
+    <link rel="stylesheet" href="Styles/jquery.ui.css">
+    <link rel="stylesheet" href="Styles/bootstrap.sortable.css">
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <script src="Javascripts/jquery-3.1.1.min.js"></script>
+    <script src="Javascripts/jquery.ui.js"></script>
+    <script src="https://socket.vndm.io/socket.io/socket.io.js"></script>
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header-middle">
+                <div class="header-middle-inner fixed-top">
+                    <div class="container-fluid">
+                        <nav class="navbar navbar-expand-md navbar-light">
+                            <div class="navbar-toggler-menu">
+                                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon-01"></span>
+                                    <span class="navbar-toggler-icon-02"></span>
+                                    <span class="navbar-toggler-icon-03"></span>
+                                </button>
+                            </div>
+                            <a class="navbar-brand" href="https://vndm.io/"><img src="Images/logo.png" alt="VNDM"></a>
+                            <div class="collapse navbar-collapse" id="navbar">
+                                <div class="navbar-collapse-inner">
+                                    <ul class="navbar-nav m-auto">
+                                        <li>
+                                            <a href="market.html">THỊ TRƯỜNG</a>
+                                        </li>
+                                        <li>
+                                            <a href="news.html">TIN TỨC</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://suport.vndm.io/">HỖ TRỢ</a>
+                                        </li>
+                                    </ul>
+                                    <div class="nav-theme-language">
+                                        <nav class="nav-switch-theme">
+                                            <button class="btn-theme" data-theme="dark-theme" data-show="default"><i class="fas fa-moon"></i></button>
+                                            <button class="btn-theme" data-theme="light-theme"><i class="fas fa-sun"></i></button>
+                                        </nav>
+                                        <nav class="nav-language">
+                                            <a href="javascript:void(0);" class="active" title="Tiếng Việt">VN</a>
+                                            <a href="language/en" title="English">EN</a>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                            <nav class="nav-switch-theme">
+                                <button class="btn-theme" data-theme="dark-theme" data-show="default"><i class="fas fa-moon"></i></button>
+                                <button class="btn-theme" data-theme="light-theme"><i class="fas fa-sun"></i></button>
+                            </nav>
+                            <nav class="nav-language">
+                                <a href="javascript:void(0);" class="active" title="Tiếng Việt">VN</a>
+                                <a href="language/en" title="English">EN</a>
+                            </nav>
+                            <!--HTML when user not yet login-->
+                            <div class="navbar-toggler-user">
+                                <a href="#" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-user" aria-controls="navbar-user" aria-expanded="false" aria-label="Toggle navigation"></a>
+                            </div>
+                            <div class="ml-auto collapse navbar-collapse-user" id="navbar-user">
+                                <div class="navbar-collapse-user-inner">
+                                    <ul class="nav-user">
+                                        <li><a href="login.html" class="btn-login">ĐĂNG NHẬP</a></li>
+                                        <li><a href="register.html" class="btn-register">ĐĂNG KÝ</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--END HTML when user not yet login-->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!--/.header-middle-->
+        </header>
+        <!--/.header-->
+        <main class="main no-sidebar">
+            <div class="trade-header">
+                <div class="container-fluid mt-3">
+                    <div class="trade-header-wrap">
+                        <div class="trade-market">
+                            <div class="market-base">
+                                <div class="icon"><img src="/Images/payments/ETC.png" alt="Ethereum Classic / Bitcoin"></div>
+                                    <div class="txt">Ethereum Classic / Bitcoin</div>
+                                </div>
+                            </div>
+                            <!--/.trade-market-->
+                            <div class="market-price">
+                                <ul class="market-price-list">
+                                    <li>
+                                        <dl>
+                                            <dt>Giá Cuối :</dt>
+                                            <dd><span class="lastPrice">0.00000000</span> BTC</dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl>
+                                            <dt>Giá Cao 24H :</dt>
+                                            <dd><span class="highPrice">0.00000000</span> BTC</dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl>
+                                            <dt>Giá Thấp 24H :</dt>
+                                            <dd><span class="lowPrice">0.00000000</span> BTC</dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl>
+                                            <dt>Khối Lượng :</dt>
+                                            <dd><span id="marketVolume">0.00000000</span> ETC</dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--/.trade-market-->
+                        </div>
+                        <!--/.trade-header-wrap-->
+                    </div>
+                    <!--/.container-fluid-->
+                </div>
+                <!--/.trade-header-->
+                <div class="container-fluid">
+                    <div class="main-wrap">
+                        <div class="main-content">
+                            <div class="trade-content">
+                                <div class="trade-body">
+                                    <div class="section-map">
+                                        <div class="sec-header">
+                                            <ul class="nav nav-tabs">
+                                                <li>
+                                                    <a class="active" data-toggle="tab" href="#tabChart">BIỂU ĐỒ</a>
+                                                </li>
+                                                <li>
+                                                    <a data-toggle="tab" href="#tabDepth">KHỐI LƯỢNG</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="tabChart">
+                                                <div class="tradingview-widget-container">
+                                                    <div id="chartConatiner"></div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="tabDepth">
+                                                <div id="depthContainer" data-balloon-ask="Giá Bán : <strong>[Price]</strong><br/>Khối Lượng : <strong>[Volume]</strong><br/>Tổng Khối Lượng : <strong>[Total]</strong>" data-balloon-bid="Giá Mua : <strong>[Price]</strong><br/>Khối Lượng : <strong>[Volume]</strong><br/>Tổng Khối Lượng : <strong>[Total]</strong>"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/.map-->
+                                    <div class="trade-box">
+                                        <div class="trade-area">
+                                            <div class="col trade-sell">
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover table-dashed " id="sellOrders" data-btn-first="<a class='btn btn-default btn-sm disabled' data-table='#sellOrders' data-page='1'><i class='fa fa-fast-backward fa-fw'></i></a>" data-btn-previous="<a class='btn btn-default btn-sm disabled'data-table='#sellOrders' data-page='[PREVIOUS]'><i class='fa fa-step-backward fa-fw'></i></a>" data-btn-page="<a class='btn btn-default btn-sm' data-table='#sellOrders' data-page='[PAGE]'>[PAGE]</a>" data-btn-disabled="<a class='btn btn-default btn-sm disabled'>[PAGE]</a>" data-btn-next="<a class='btn btn-default btn-sm disabled' data-table='#sellOrders' data-page='[NEXT]'><i class='fa fa-step-forward fa-fw'></i></a>" data-btn-last="<a class='btn btn-default btn-sm disabled' data-table='#sellOrders' data-page='[LAST]'><i class='fa fa-fast-forward fa-fw'></i></a>" data-record="10" data-target="#sellOrderPaging">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="text-center">
+                                                                    Tổng (BTC)
+                                                                </th>
+                                                                <th class="text-center">
+                                                                    Khối Lượng (ETC)
+                                                                </th>
+                                                                <th class="text-center">
+                                                                    Giá Bán (BTC)
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td colspan="3" align="center">Đang tải ...</td>
+                                                            </tr>
+                                                        </tbody>
+                                                        <tfoot>
+                                                            <tr>
+                                                                <td align="center">
+                                                                    <span id="volumeSellQuote">0</span>
+                                                                </td>
+                                                                <td align="center">
+                                                                    <span id="volumeSellBase">0</span>
+                                                                </td>
+                                                                <td align="center">
+                                                                    <select id="sellDecimal" class="border-0" onChange="initialize.emit('SELL',{ Market:'ETC-BTC' } )">
+                                                                        <option value="8">&nbsp;0.00000001&nbsp;&nbsp;&nbsp;</option>
+                                                                        <option value="7">&nbsp;0.0000001&nbsp;&nbsp;&nbsp;</option>
+                                                                        <option value="6">&nbsp;0.000001&nbsp;&nbsp;&nbsp;</option>
+                                                                        <option value="5">&nbsp;0.00001&nbsp;&nbsp;&nbsp;</option>
+                                                                        <option value="4">&nbsp;0.0001&nbsp;&nbsp;&nbsp;</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                    <div id="sellOrderPaging" class="text-center"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col trade-center">
+                                                <ul class="nav nav-tabs tab-form">
+                                                    <li class="tab-buy">
+                                                        <a class="btn-buy active" data-toggle="tab" href="#tabBuy">Mua</a>
+                                                    </li>
+                                                    <li class="tab-sell">
+                                                        <a class="btn-sell" data-toggle="tab" href="#tabSell">Bán</a>
+                                                    </li>
+                                                </ul>
+                                                <select id="orderType" class="form-control" onchange="showField(this.value);">
+                                                    <option value="LIMIT">LIMIT - GIÁ GIỚI HẠN</option>
+                                                    <option value="MARKET">MARKET - GIÁ THỊ TRƯỜNG</option>
+                                                    <option value="CONDITION">CONDITION - LỆNH ĐIỀU KIỆN</option>
+                                                </select>
+                                                <div class="tab-content">
+                                                    <div class="tab-pane active" id="tabBuy">
+                                                        <form name="frmBuy">
+                                                            <input type="hidden" name="xFee" value="0.0025">
+                                                            <input type="hidden" name="xMarket" value="ETC-BTC">
+                                                            <div class="form-group multiple-input limit market margin condition">
+                                                                <label class="form-label" for="xAmount">Số Lượng</label>
+                                                                <div class="input-group limit market margin condition">
+                                                                    <input type="text" name="xAmount" value="0" class="form-control" placeholder="0">
+                                                                    <div class="input-group-append">
+                                                                        <button type="button" class="btn btn-default">ETC</button>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="radio-list radio-btn-full">
+                                                                    <li>
+                                                                        <label class="radio-btn">
+                                                                            <input type="radio" value="0.25" name="percent" onclick="setAmount('BUY','BTC',this.value)"><span>25%</span>
+                                                                        </label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="radio-btn">
+                                                                            <input type="radio" value="0.50" name="percent" onclick="setAmount('BUY','BTC',this.value)"><span>50%</span>
+                                                                        </label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="radio-btn">
+                                                                            <input type="radio" value="0.75" name="percent" onclick="setAmount('BUY','BTC',this.value)"><span>75%</span>
+                                                                        </label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="radio-btn">
+                                                                            <input type="radio" value="1.00" name="percent" onclick="setAmount('BUY','BTC',this.value)"><span>100%</span>
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="form-group limit condition">
+                                                                <label class="dropdown-toggle form-label text-primary" for="xPrice" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Giá Mua</label>
+                                                                <div class="dropdown-menu">
+                                                                    <ul>
+                                                                        <li><a href="javascript:pickPrice('BUY','ASK');">Giá Bán ( <span class="askPrice"></span> )</a></li>
+                                                                        <li><a href="javascript:pickPrice('BUY','BID');">Giá Mua ( <span class="bidPrice"></span> )</a></li>
+                                                                        <li><a href="javascript:pickPrice('BUY','LAST');">Giá Cuối ( <span class="lastPrice"></span> )</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="input-group">
+                                                                    <input type="text" name="xPrice" id="xPrice" class="form-control">
+                                                                    <div class="input-group-append">
+                                                                        <button type="button" class="btn btn-default">BTC</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group limit">
+                                                                <label class="form-label" for="buyReceive">Thực Nhận</label>
+                                                                <div class="input-group">
+                                                                    <input type="text" name="buyReceive" id="buyReceive" class="form-control" value="0" readonly>
+                                                                    <div class="input-group-append">
+                                                                        <button type="button" class="btn btn-default">ETC</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group limit">
+                                                                <ul class="radio-list">
+                                                                    <li>
+                                                                        <label class="form-label">Giữ Lệnh</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="radio-container radio-primary">
+                                                                            <input type="radio" name="xPlaced" value="YES" checked><span>Có</span>
+                                                                        </label>
+                                                                    </li>
+                                                                    <li class="ml-5">
+                                                                        <label class="radio-container radio-primary">
+                                                                            <input type="radio" name="xPlaced" value="NO"><span>Không</span>
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="form-group form-group-m condition" style="display: none;">
+                                                                <div>
+                                                                    <label class="form-label">Tham Chiếu</label>
+                                                                    <select name="xReference" class="form-control">
+                                                                        <option value="ASK">Giá Bán</option>
+                                                                        <option value="BID">Giá Mua</option>
+                                                                        <option value="LAST">Giá Cuối</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div>
+                                                                    <label class="form-label">Điều Kiện</label>
+                                                                    <select name="xCondition" class="form-control">
+                                                                        <option value="GTOE">&gt;/=</option>
+                                                                        <option value="LTOE">&lt;/=</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div>
+                                                                    <label class="form-label">Giá Đích</label>
+                                                                    <input type="text" name="xTarget" class="form-control" value="0">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group condition" style="display: none;">
+                                                                <ul class="radio-list">
+                                                                    <li>
+                                                                        <label class="form-label">Loại Lệnh</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="radio-container radio-primary">
+                                                                            <input type="radio" name="xType" value="LIMIT" checked><span>Giá giới hạn</span>
+                                                                        </label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="radio-container radio-primary">
+                                                                            <input type="radio" name="xType" value="MARKET"><span>Giá thị trường</span>
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <a href="login.html" class="btn btn-warning btn-block text-uppercase">Đăng Nhập</a>
+                                                            <br />
+                                                            <p class="text-center">
+                                                                Tôi chưa có tài khoản ! <a href="register.html" class="text-primary">Đăng Ký</a>
+                                                            </p>
+                                                        </form>
+                                                    </div>
+                                                    <div class="tab-pane" id="tabSell">
+                                                        <form name="frmSell">
+                                                            <input type="hidden" name="xFee" value="0.0025">
+                                                            <input type="hidden" name="xMarket" value="ETC-BTC">
+                                                            <div class="form-group multiple-input limit market margin condition">
+                                                                <label class="form-label" for="xAmount">Số Lượng</label>
+                                                                <div class="input-group limit market margin condition">
+                                                                    <input type="text" name="xAmount" value="0" class="form-control" placeholder="0">
+                                                                    <div class="input-group-append">
+                                                                        <button type="button" class="btn btn-default">ETC</button>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="radio-list radio-btn-full">
+                                                                    <li>
+                                                                        <label class="radio-btn">
+                                                                            <input type="radio" value="0.25" name="percent" onclick="setAmount('SELL','ETC',this.value)"><span>25%</span>
+                                                                        </label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="radio-btn">
+                                                                            <input type="radio" value="0.50" name="percent" onclick="setAmount('SELL','ETC',this.value)"><span>50%</span>
+                                                                        </label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="radio-btn">
+                                                                            <input type="radio" value="0.75" name="percent" onclick="setAmount('SELL','ETC',this.value)"><span>75%</span>
+                                                                        </label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="radio-btn">
+                                                                            <input type="radio" value="1.00" name="percent" onclick="setAmount('SELL','ETC',this.value)"><span>100%</span>
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="form-group limit condition">
+                                                                <label class="dropdown-toggle form-label text-primary" for="xPrice" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Giá Bán</label>
+                                                                <div class="dropdown-menu">
+                                                                    <ul>
+                                                                        <li><a href="javascript:pickPrice('SELL','BID');">Giá Mua ( <span class="bidPrice"></span> )</a></li>
+                                                                        <li><a href="javascript:pickPrice('SELL','ASK');">Giá Bán ( <span class="askPrice"></span> )</a></li>
+                                                                        <li><a href="javascript:pickPrice('SELL','LAST');">Giá Cuối ( <span class="lastPrice"></span> )</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="input-group">
+                                                                    <input type="text" name="xPrice" id="xPrice" class="form-control">
+                                                                    <div class="input-group-append">
+                                                                        <button type="button" class="btn btn-default">BTC</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group limit">
+                                                                <label class="form-label" for="sellReceive">Thực Nhận</label>
+                                                                <div class="input-group">
+                                                                    <input type="text" name="sellReceive" id="sellReceive" class="form-control" value="0" readonly>
+                                                                    <div class="input-group-append">
+                                                                        <button type="button" class="btn btn-default">BTC</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group limit">
+                                                                <ul class="radio-list">
+                                                                    <li>
+                                                                        <label class="form-label">Giữ Lệnh</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="radio-container radio-primary">
+                                                                            <input type="radio" name="xPlaced" value="YES" checked><span>Có</span>
+                                                                        </label>
+                                                                    </li>
+                                                                    <li class="ml-5">
+                                                                        <label class="radio-container radio-primary">
+                                                                            <input type="radio" name="xPlaced" value="NO"><span>Không</span>
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="form-group form-group-m condition" style="display: none;">
+                                                                <div>
+                                                                    <label class="form-label">Tham Chiếu</label>
+                                                                    <select name="xReference" class="form-control">
+                                                                        <option value="BID">Giá Mua</option>
+                                                                        <option value="ASK">Giá Bán</option>
+                                                                        <option value="LAST">Giá Cuối</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div>
+                                                                    <label class="form-label">Điều Kiện</label>
+                                                                    <select name="xCondition" class="form-control">
+                                                                        <option value="LTOE">&lt;/=</option>
+                                                                        <option value="GTOE">&gt;/=</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div>
+                                                                    <label class="form-label">Giá Đích</label>
+                                                                    <input type="text" name="xTarget" class="form-control" value="0">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group condition" style="display: none;">
+                                                                <ul class="radio-list">
+                                                                    <li>
+                                                                        <label class="form-label">Loại Lệnh</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="radio-container radio-primary">
+                                                                            <input type="radio" name="xType" value="LIMIT" checked><span>Giá giới hạn</span>
+                                                                        </label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="radio-container radio-primary">
+                                                                            <input type="radio" name="xType" value="MARKET"><span>Giá thị trường</span>
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <a href="login.html" class="btn btn-warning btn-block text-uppercase">Đăng Nhập</a>
+                                                            <br />
+                                                            <p class="text-center">
+                                                                Tôi chưa có tài khoản ! <a href="register.html" class="text-primary">Đăng Ký</a>
+                                                            </p>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/.trade-center-->
+                                            <div class="col trade-buy">
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover table-dashed " id="buyOrders" data-btn-first="<a class='btn btn-default btn-sm disabled' data-table='#buyOrders' data-page='1'><i class='fa fa-fast-backward fa-fw'></i></a>" data-btn-previous="<a class='btn btn-default btn-sm disabled' data-table='#buyOrders' data-page='[PREVIOUS]'><i class='fa fa-step-backward fa-fw'></i></a>" data-btn-page="<a class='btn btn-default btn-sm' data-table='#buyOrders' data-page='[PAGE]'>[PAGE]</a>" data-btn-disabled="<a class='btn btn-default btn-sm disabled'>[PAGE]</a>" data-btn-next="<a class='btn btn-default btn-sm disabled' data-table='#buyOrders' data-page='[NEXT]'><i class='fa fa-step-forward fa-fw'></i></a>" data-btn-last="<a class='btn btn-default btn-sm disabled' data-table='#buyOrders' data-page='[LAST]'><i class='fa fa-fast-forward fa-fw'></i></a>" data-record="10" data-target="#buyOrderPaging">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="text-center">
+                                                                    Giá Mua (BTC)
+                                                                </th>
+                                                                <th class="text-center">
+                                                                    Khối Lượng (ETC)
+                                                                </th>
+                                                                <th class="text-center">
+                                                                    Tổng (BTC)
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <td colspan="3" align="center">Đang tải ...</td>
+                                                        </tbody>
+                                                        <tfoot>
+                                                            <tr>
+                                                                <td align="center">
+                                                                    <select id="buyDecimal" class="border-0" onChange="initialize.emit('BUY',{ Market:'ETC-BTC' } )">
+                                                                        <option value="8">&nbsp;0.00000001&nbsp;&nbsp;&nbsp;</option>
+                                                                        <option value="7">&nbsp;0.0000001&nbsp;&nbsp;&nbsp;</option>
+                                                                        <option value="6">&nbsp;0.000001&nbsp;&nbsp;&nbsp;</option>
+                                                                        <option value="5">&nbsp;0.00001&nbsp;&nbsp;&nbsp;</option>
+                                                                        <option value="4">&nbsp;0.0001&nbsp;&nbsp;&nbsp;</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td align="center">
+                                                                    <span id="volumeBuyBase">0</span>
+                                                                </td>
+                                                                <td align="center">
+                                                                    <span id="volumeBuyQuote">0</span>
+                                                                </td>
+                                                            </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                    <div id="buyOrderPaging" class="text-center"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/.trade-box-->
+                                    <h4>LỊCH SỬ GIAO DỊCH</h4>
+                                    <div class="table-responsive" id="tradeHistory">
+                                        <table class="table table-hover table-nowrap" id="tblTrades" data-new-sell="<tr><td align='center'><div class='new down'><span class='text-danger'>Bán</span></div></td><td align='center'><div class='new down'>[Price]</div></td><td align='center'><div class='new down'>[Amount]</div></td><td align='center'><div class='new down'>[Total]</div></td><td align='center'><div class='new down'>[Date] [Time]</div></td></tr>" data-new-buy="<tr><td align='center'><div class='new up'><span class='text-success'>Mua</span></div></td><td align='center'><div class='new up'>[Price]</div></td><td align='center'><div class='new up'>[Amount]</div></td><td align='center'><div class='new up'>[Total]</div></td><td align='center'><div class='new up'>[Date] [Time]</div></td></tr>" data-old-sell="<tr><td align='center'><div class='old'><span class='text-danger'>Bán</span></div></td><td align='center'><div class='old'>[Price]</div></td><td align='center'><div class='old'>[Amount]</div></td><td align='center'><div class='old'>[Total]</div></td><td align='center'><div class='old'>[Date] [Time]</div></td></tr>" data-old-buy="<tr><td align='center'><div class='old'><span class='text-success'>Mua</span></div></td><td align='center'><div class='old'>[Price]</div></td><td align='center'><div class='old'>[Amount]</div></td><td align='center'><div class='old'>[Total]</div></td><td align='center'><div class='old'>[Date] [Time]</div></td></tr>" data-empty="<tr><td colspan='5' align='center'><div class='old'>Chưa có dữ liệu !</div></td></tr>">
+                                            <thead class="bg-white">
+                                                <tr>
+                                                    <th class="text-center">Giao Dịch</th>
+                                                    <th class="text-center">Giá ( BTC )</th>
+                                                    <th class="text-center">Khối Lượng ( ETC )</th>
+                                                    <th class="text-center">Thành Tiền ( BTC )</th>
+                                                    <th class="text-center">Ngày Giờ</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="loading">
+                                                    <td colspan="5" align="center">
+                                                        <div class="old">Đang tải ...</div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!--/Market-->
+                                    <section class="widget-market">
+                                        <div class="widget-market-header">
+                                            <h2 class="widget-market-title mb-0">Thị Trường</h2>
+                                            <div class="sec-header mb-0">
+                                                <ul class="nav nav-tabs tab-market">
+                                                    <li>
+                                                        <a class="active" data-toggle="tab" href="#tabBTC" id="marketBTC" aria-controls="tabBTC">BTC</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-toggle="tab" href="#tabETH" id="marketETH" aria-controls="tabETH">ETH</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-toggle="tab" href="#tabUSDT" id="marketUSDT" aria-controls="tabUSDT">USDT</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-toggle="tab" href="#tabVNDM" id="marketVNDM" aria-controls="tabVNDM">VNDM</a>
+                                                    </li>
+                                                </ul>
+                                                <div class="input-search-group">
+                                                    <input type="search" name="searchMarketTop" id="search" data-market="" class="form-control">
+                                                    <label class="btn-search" for="search">Search</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="widget-market-content p-0">
+                                            <div class="tab-content">
+                                                <div class="tab-pane fade show active" role="tabpanel">
+                                                    <table class="table table-hover table-stripped table-nowrap table-market sortable">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="text-center" data-defaultsort="disabled">
+                                                                    <a href="javascript:showFavorite();"><i class="fas fa-star text-warning"></i></a>
+                                                                </th>
+                                                                <th>Thị Trường</th>
+                                                                <th>Giá Cuối</th>
+                                                                <th class="text-center">Thay Đổi</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="marketBTC">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="BCH-BTC"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/BCH-BTC">BCH/BTC</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_BCH-BTC">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_BCH-BTC">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketETH collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="BCH-ETH"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/BCH-ETH">BCH/ETH</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_BCH-ETH">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_BCH-ETH">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketUSDT collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="BCH-USDT"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/BCH-USDT">BCH/USDT</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_BCH-USDT">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_BCH-USDT">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketVNDM collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="BCH-VNDM"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/BCH-VNDM">BCH/VNDM</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_BCH-VNDM">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_BCH-VNDM">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketUSDT collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="BTC-USDT"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/BTC-USDT">BTC/USDT</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_BTC-USDT">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_BTC-USDT">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketVNDM collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="BTC-VNDM"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/BTC-VNDM">BTC/VNDM</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_BTC-VNDM">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_BTC-VNDM">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketBTC">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="BTG-BTC"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/BTG-BTC">BTG/BTC</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_BTG-BTC">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_BTG-BTC">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketETH collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="BTG-ETH"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/BTG-ETH">BTG/ETH</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_BTG-ETH">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_BTG-ETH">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketUSDT collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="BTG-USDT"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/BTG-USDT">BTG/USDT</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_BTG-USDT">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_BTG-USDT">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketVNDM collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="BTG-VNDM"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/BTG-VNDM">BTG/VNDM</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_BTG-VNDM">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_BTG-VNDM">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketBTC">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="DASH-BTC"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/DASH-BTC">DASH/BTC</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_DASH-BTC">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_DASH-BTC">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketETH collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="DASH-ETH"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/DASH-ETH">DASH/ETH</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_DASH-ETH">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_DASH-ETH">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketUSDT collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="DASH-USDT"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/DASH-USDT">DASH/USDT</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_DASH-USDT">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_DASH-USDT">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketVNDM collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="DASH-VNDM"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/DASH-VNDM">DASH/VNDM</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_DASH-VNDM">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_DASH-VNDM">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketBTC">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="ETC-BTC"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/ETC-BTC">ETC/BTC</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_ETC-BTC">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_ETC-BTC">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketETH collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="ETC-ETH"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/ETC-ETH">ETC/ETH</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_ETC-ETH">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_ETC-ETH">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketUSDT collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="ETC-USDT"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/ETC-USDT">ETC/USDT</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_ETC-USDT">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_ETC-USDT">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketVNDM collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="ETC-VNDM"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/ETC-VNDM">ETC/VNDM</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_ETC-VNDM">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_ETC-VNDM">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketBTC">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="ETH-BTC"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/ETH-BTC">ETH/BTC</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_ETH-BTC">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_ETH-BTC">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketUSDT collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="ETH-USDT"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/ETH-USDT">ETH/USDT</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_ETH-USDT">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_ETH-USDT">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketVNDM collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="ETH-VNDM"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/ETH-VNDM">ETH/VNDM</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_ETH-VNDM">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_ETH-VNDM">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketBTC">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="LTC-BTC"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/LTC-BTC">LTC/BTC</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_LTC-BTC">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_LTC-BTC">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketETH collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="LTC-ETH"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/LTC-ETH">LTC/ETH</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_LTC-ETH">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_LTC-ETH">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketUSDT collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="LTC-USDT"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/LTC-USDT">LTC/USDT</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_LTC-USDT">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_LTC-USDT">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketVNDM collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="LTC-VNDM"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/LTC-VNDM">LTC/VNDM</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_LTC-VNDM">1.50000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_LTC-VNDM">
+                                                                        <span class="text-success">+50% <i class="fas fa-arrow-up fa-fw"></i></span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketVNDM collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="USDT-VNDM"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/USDT-VNDM">USDT/VNDM</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_USDT-VNDM">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_USDT-VNDM">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketBTC">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="XRP-BTC"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/XRP-BTC">XRP/BTC</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_XRP-BTC">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_XRP-BTC">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketETH collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="XRP-ETH"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/XRP-ETH">XRP/ETH</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_XRP-ETH">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_XRP-ETH">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketUSDT collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="XRP-USDT"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/XRP-USDT">XRP/USDT</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_XRP-USDT">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_XRP-USDT">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketVNDM collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="XRP-VNDM"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/XRP-VNDM">XRP/VNDM</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_XRP-VNDM">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_XRP-VNDM">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketBTC">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="ZEC-BTC"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/ZEC-BTC">ZEC/BTC</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_ZEC-BTC">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_ZEC-BTC">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketETH collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="ZEC-ETH"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/ZEC-ETH">ZEC/ETH</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_ZEC-ETH">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_ZEC-ETH">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketUSDT collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="ZEC-USDT"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/ZEC-USDT">ZEC/USDT</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_ZEC-USDT">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_ZEC-USDT">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="marketVNDM collapse">
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="btn-favorite" data-market="ZEC-VNDM"><i class="fas fa-star"></i></a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="trade/ZEC-VNDM">ZEC/VNDM</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span class="last_ZEC-VNDM">0.00000000</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="change_ZEC-VNDM">
+                                                                        0%
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <!--/End Market-->
+                                </div>
+                                <!--/.trade-body-->
+                            </div>
+                            <!--/.main-content-->
+                        </div>
+                        <!--/.main-wrap-->
+                    </div>
+                </div>
+                <!--/.container-fluid-->
+        </main>
+        <div class="modal fade" id="addMargin" tabindex="-1" role="dialog" aria-labelledby="marginModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="marginModalLabel"></h4>
+              </div>
+              <form name="frmAdd" onsubmit="return false;">
+              <div class="modal-body">
+                  <input type="hidden" name="xMargin" value=""/>
+                  <div class="form-group">
+                    <label for="amount" class="control-label">Số Tiền :</label>
+                    <input type="text" name="xAmount" class="form-control" id="amount">
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                <button type="submit" class="btn btn-primary" onClick="addMargin();" data-dismiss="modal">Nạp Thêm</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="updateMargin" tabindex="-1" role="dialog" aria-labelledby="marginModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="marginModalLabel"></h4>
+              </div>
+              <form name="frmUpdate" onsubmit="return false;">
+              <div class="modal-body">
+                  <input type="hidden" name="xMargin" value=""/>
+                  <div class="form-group">
+                    <label for="take-profit" class="control-label">Chốt Lời :</label>
+                    <input type="text" name="xTP" class="form-control" id="take-profit">
+                  </div>
+                  <div class="form-group">
+                    <label for="stop-loss" class="control-label">Cắt Lỗ :</label>
+                    <input type="text" name="xSL" class="form-control" id="stop-loss">
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                <button type="submit" class="btn btn-primary" onClick="updateMargin();" data-dismiss="modal">Cập Nhật</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <footer class="footer">
+    <div class="footer-top">
+        <div class="container-fluid">
+            <nav class="d-flex">
+                <ul class="footer-menu m-auto">
+                    <li><a href="fees.html">Biểu Phí</a></li>
+                    <li><a href="faq.html">Hỏi Đáp</a></li>
+                    <li><a href="custom/terms-of-use.html">Điều Khoản Sử Dụng</a></li>
+                    <li><a href="custom/privacy-policy.html">Chính Sách Bảo Mật</a></li>
+                    <li><a href="https://api.vndm.io/">Tài Liệu API</a></li>
+                    <li><a href="status.html">Trạng Thái</a></li>
+                    <li><a href="contact.html">Liên Hệ</a></li>
+                </ul>
+                <ul class="footer-social ml-auto">
+                    <li><a class="facebook" href="#" target="_blank"><i class="fab fa-facebook-f fa-fw"></i></a></li>
+                    <li><a class="twitter" href="#" target="_blank"><i class="fab fa-twitter fa-fw"></i></a></li>
+                    <li><a class="instagram" href="#" target="_blank"><i class="fab fa-instagram fa-fw"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container-fluid">
+            <p class="copyright">Bản Quyền &copy; 2018 vndm.io</p>
+        </div>
+    </div>
+</footer>
+<!--/.footer-->
+    </div>
+    <!--/.wrapper-->
+    <div class="widget-chat">
+    <a class="chatHandle" href="javascript:void(0);"><img src="Images/trochuyen.png" alt="Trò Chuyện"></a>
+    <div class="widget-chat-content">
+        <form name="frmChat" onSubmit="return false;" method="post" data-toggle="validator">
+            <div class="panel-chat">
+                <div class="panel-chat-header">
+                    <a class="btn-close-chat">Trò Chuyện</a>
+                </div>
+                <div class="panel-chat-body">
+                    <div id="listMessage" class="panel-chat-content"></div>
+                </div>
+                <div class="panel-chat-footer">
+                                            <br/>
+                        <a href="login.html">Đăng Nhập Để Trò Chuyện</a>
+                                    </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--/.widget-chat-->
+<link rel="stylesheet" href="Styles/chat.css">
+<script src="Javascripts/chat.js"></script>
+<script type="text/javascript">
+<!--    
+    $(document).ready(function() 
+    { 
+        setInterval(function(){
+            loadMessage();
+        },2000);
+    }); 
+//-->
+</script>
+    <script src="Javascripts/popper.min.js"></script>
+    <script src="/Javascripts/bootstrap.min.js"></script>
+    <script src="Javascripts/common.js"></script>
+    <script src="Javascripts/toastr.js"></script>
+    <script src="Javascripts/validator.js"></script>
+    <script src="Javascripts/jquery.number.js"></script>
+    <script src="Javascripts/charting.library.min.js"></script>
+    <script src="Javascripts/polyfills.js"></script>
+    <script src="Javascripts/bundle.js"></script>
+    <script src="Javascripts/function.js"></script>
+    <script src="Javascripts/jquery.floatThead.js"></script>
+    <script src="Javascripts/bootstrap.paging.js"></script>
+    <script src="Javascripts/bootstrap.sortable.js"></script>
+    <script src="Javascripts/jquery.inputmask.bundle.js"></script>
+    <script>
+    <!--
+        var User      = '';
+        var Market    = 'ETC-BTC';
+        var Record    = { 'ORDER':100,'TRADE':250 };
+        var Decimal   = { 'BASE':8,'QUOTE':8 };
+        var Currency  = { 'BASE':'ETC','QUOTE':'BTC' };
+        var Language  = { 'BUY':'Mua','SELL':'Bán','MARKET':'Giá Thị Trường','LIMIT':'Giá Giới Hạn','BID':'Giá Mua','ASK':'Giá Bán','LAST':'Giá Cuối','PRICE':'Giá','TOTAL':'Thành Tiền','CANCEL':'Hủy Lệnh','CLOSE':'Đóng Lệnh','EMPTY':'Chưa có dữ liệu !','LOADING':'Đang tải ...','DAY':'ngày','TIME':'Thời Gian','6H':'6 giờ','12H':'12 giờ','1D':'1 ngày','1W':'1 tuần','1M':'1 tháng','3M':'3 tháng','1Y':'1 năm'};
+        function showFavorite()
+        {
+            $('.tab-market a.active').removeClass('active show');
+            $('.table-market tbody tr').addClass('collapse');
+            $('.marketFavorite').removeClass('collapse');
+            localStorage.setItem('activeTab', 'marketFavorite');
+        }
+        var lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            var now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 350) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+        $(document).ready(function()
+        {
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-bottom-left",
+                "preventDuplicates": true,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+            $(document).on('focus click', 'input, select', function(e) {
+                $(this).parent().addClass('active');
+            });
+            $(document).on('blur', 'input, select', function(e) {
+                $(this).parent().removeClass('active');
+            });
+            var marketFavorites = JSON.parse(localStorage.getItem('marketFavorites')) || [];
+            $.each(marketFavorites, function(key, marketFavorite)
+            {
+                $('a[data-market="' + marketFavorite + '"] i').addClass('text-warning');
+                $('a[data-market="' + marketFavorite + '"]').parent().parent().addClass('marketFavorite');
+            });
+            $(document).on('click', '.btn-favorite', function(e){
+                var marketIndex = marketFavorites.indexOf($(this).data('market'));
+                if (marketIndex == -1)
+                {
+                    $(this).find('i').addClass('text-warning');
+                    marketFavorites.push($(this).data('market'));
+                    $(this).parent().parent().addClass('marketFavorite');
+                }
+                else
+                {
+                    $(this).find('i').removeClass('text-warning');
+                    marketFavorites.splice(marketIndex, 1);
+                    $(this).parent().parent().removeClass('marketFavorite');
+                }
+                localStorage.setItem('marketFavorites', JSON.stringify(marketFavorites));
+            });
+            var activeTab = localStorage.getItem('activeTab') || 'marketVNDM';
+            if(activeTab == 'marketFavorite')
+            {
+                showFavorite();
+            }
+            else
+            {
+                $('.tab-market a[id="' + activeTab + '"]').tab('show');
+                $('.table-market tbody tr').addClass('collapse');
+                $('.' + activeTab).removeClass('collapse');
+            }
+            $('.tab-market a').on('shown.bs.tab', function (e)
+            {
+                $('.table-market tbody tr').addClass('collapse');
+                $('.' + e.target.id).removeClass('collapse');
+                localStorage.setItem('activeTab', e.target.id);
+            });
+            function _setHeightWidgetMarket() {
+                var winH = $(window).height();
+                var headerHeight = $('.header').height();
+                var widgetMarketHeight = $('.widget-market-header').outerHeight(true);
+                var heightWidgetContent = parseInt(winH - (headerHeight + widgetMarketHeight));
+                if (heightWidgetContent > 0) {
+                    $('.widget-market-content').css({
+                        'height': heightWidgetContent
+                    });
+                }
+            }
+            $(window).on('load resize', function() {
+                _setHeightWidgetMarket();
+            });
+            $('.txt').click(function(e)
+            {
+                e.preventDefault();
+                if ($('.widget-market').hasClass('active'))
+                {
+                    $('.widget-market').removeClass('active');
+                } else {
+                    $('.widget-market').addClass('active');
+                }
+            });
+            $('.widget-market-title').click(function(e) {
+                $('.widget-market').removeClass('active');
+            });
+            $('input[name="searchMarketTop"]').on('keyup', function() {
+                var keyWordSearch = $(this).val().toLowerCase();
+                $('.widget-market table tr').filter(function() {
+                    if(!$(this).hasClass('collapse'))
+                    {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(keyWordSearch) > -1);
+                    }
+                });
+            });
+            $('form[name=frmBuy] input[name=xPrice]').bind( "keyup", function() { getFee('BUY'); });
+            $('form[name=frmBuy] input[name=xAmount]').bind( "keyup", function() { getFee('BUY'); });
+            $('form[name=frmSell] input[name=xPrice]').bind( "keyup", function() { getFee('SELL'); });
+            $('form[name=frmSell] input[name=xAmount]').bind( "keyup", function() { getFee('SELL'); });
+            $('button[name=btnBuy]').bind( "click", function(){ buyOrder(); });
+            $('button[name=btnSell]').bind( "click", function(){ sellOrder(); });
+            $('input[name=xAmount]').inputmask({ alias : 'currency', prefix: '', digits : Decimal['BASE'], 'autoGroup': false, 'digitsOptional': true }).css('text-align','left');
+            $('input[name=xPrice],input[name=xTarget],input[name=xTP],input[name=xSL]').inputmask({ alias : 'currency', prefix: '', digits : Decimal['QUOTE'], 'autoGroup': false, 'digitsOptional': true }).css('text-align','left');
+            $('input[name=xAmount],input[name=xPrice],input[name=xTarget],input[name=xTP],input[name=xSL]').on('focus',function(){
+                $(this).val(parseFloat($(this).val().toString()));
+            });
+        });
+    //-->
+    </script>
+        <script src="Javascripts/chart.js"></script>
+    <script src="Javascripts/depth.js"></script>
+    <script src="Javascripts/trade.js"></script>
+</body>
+</html>

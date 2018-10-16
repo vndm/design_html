@@ -1653,7 +1653,6 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 	
 
 }
-
 .input-search-group .btn-search {
 	margin-bottom:0;
 	cursor:pointer;
@@ -1863,9 +1862,9 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 		display:inline-block
 	}
 }
-@media (min-width:569px) {
+@media (min-width: 992px) {
 	.collapse.navbar-collapse-user {
-		display:flex
+		display:flex;
 	}
 }
 .navbar-collapse-user {
@@ -3061,4 +3060,9 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 	.sec-header .nav-tabs>li a {
 		font-size:1.7rem
 	}
+}
+
+.btn-blue-dark{
+	background: #0b1f34;
+	color: #fff;
 }
