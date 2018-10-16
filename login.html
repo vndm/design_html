@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+	<!-- <base href="https://vndm.io/" /> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="Styles/bootstrap.css">
+	<link rel="stylesheet" href="Styles/fontawesome.css">
+	<link rel="stylesheet" href="Styles/common.css">
+    <link rel="stylesheet" href="Styles/login.css">
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/B0F3F1C4-B917-8245-8EA2-530422D27C3F/main.js" charset="UTF-8"></script><script src="Javascripts/jquery-3.1.1.min.js"></script>
+</head>
+<body class="bg-dark-blue">
+    <div class="wrapper">
+        
+        <header class="header">
+    <div class="header-middle">
+        <div class="header-middle-inner fixed-top">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <div class="navbar-toggler-menu">
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon-01"></span>
+                            <span class="navbar-toggler-icon-02"></span>
+                            <span class="navbar-toggler-icon-03"></span>
+                        </button>
+                    </div>
+                    <a class="navbar-brand" href="https://vndm.io/"><img src="Images/logo.png" alt="VNDM"></a>
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <div class="navbar-collapse-inner">
+                            <ul class="navbar-nav m-auto">
+                                <li>
+                                    <a href="market.html">THỊ TRƯỜNG</a>
+                                </li>
+                                <li>
+                                    <a href="news.html">TIN TỨC</a>
+                                </li>
+                                <li>
+                                    <a href="https://suport.vndm.io/">HỖ TRỢ</a>
+                                </li>
+                            </ul>
+                            <div class="nav-theme-language">
+                                                                <nav class="nav-language">
+                                    <a href="javascript:void(0);" class="active" title="Tiếng Việt">VN</a>
+                                    <a href="language/en" title="English">EN</a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                                        <nav class="nav-language">
+                        <a href="javascript:void(0);" class="active" title="Tiếng Việt">VN</a>
+                        <a href="language/en" title="English">EN</a>
+                    </nav>
+                                        <!--HTML when user not yet login-->
+                    <div class="navbar-toggler-user">
+                        <a href="#" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-user" aria-controls="navbar-user" aria-expanded="false" aria-label="Toggle navigation"></a>
+                    </div>
+                    <div class="ml-auto collapse navbar-collapse-user" id="navbar-user">
+                        <div class="navbar-collapse-user-inner">
+                            <ul class="nav-user">
+                                <li><a href="login.html" class="btn-login">ĐĂNG NHẬP</a></li>
+                                <li><a href="register.html" class="btn-register">ĐĂNG KÝ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--END HTML when user not yet login-->
+                                    </nav>
+            </div>
+        </div>
+    </div>
+    <!--/.header-middle-->
+</header>
+<!--/.header-->
+
+        <main class="main">
+            <section class="section-form section-register-login">
+                <div class="container-fluid">
+                    <div class="inner">
+                        <div class="section-form-inner">
+                            <h2 class="title">Đăng Nhập</h2>
+                            <p class="text-center">Bạn có thể đăng nhập bằng Email hoặc Số Điện Thoại mà không cần nhập mật khẩu!</p>
+                                                                                    <form name="frmLogin" action="login.html" method="post" data-toggle="validator">
+                                <input type="hidden" name="xVerification" value="90568b8d7b8d179d86a32eb7761b30eb">
+                                <div class="form-group">
+                                    <input type="text" name="xUsername" value="" class="form-control" placeholder="Tên truy cập, số điện thoại hoặc địa chỉ email" required="YES" data-minlength="6" maxlength="50" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="xPassword" value="" placeholder="Mật khẩu" class="form-control">
+                                </div>
+                                                                <div class="form-group">
+                                    <div class="input-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="xRemember" value="YES"><span>Tự động đăng nhập cho lần sau.</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-login-button">
+                                    <button type="submit" class="btn btn-block btn-warning">ĐĂNG NHẬP</button>
+                                </div>
+                                <div class="form-group-info">
+                                    <span>Tôi chưa có tài khoản !</span>
+                                    <a href="register.html">Đăng Ký</a>
+                                </div>
+                                <div class="btn-social-list">
+                                    <ul>
+                                        <li><a href="facebook.html">Facebook</a></li>
+                                        <li><a href="google.html">Google</a></li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!--/.main-->
+        <footer class="footer">
+    <div class="footer-top">
+        <div class="container-fluid">
+            <nav class="d-flex">
+                <ul class="footer-menu m-auto">
+                    <li><a href="fees.html">Biểu Phí</a></li>
+                    <li><a href="faq.html">Hỏi Đáp</a></li>
+                    <li><a href="custom/terms-of-use.html">Điều Khoản Sử Dụng</a></li>
+                    <li><a href="custom/privacy-policy.html">Chính Sách Bảo Mật</a></li>
+                    <li><a href="https://api.vndm.io/">Tài Liệu API</a></li>
+                    <li><a href="status.html">Trạng Thái</a></li>
+                    <li><a href="contact.html">Liên Hệ</a></li>
+                </ul>
+                <ul class="footer-social ml-auto">
+                    <li><a class="facebook" href="#" target="_blank"><i class="fab fa-facebook-f fa-fw"></i></a></li>
+                    <li><a class="twitter" href="#" target="_blank"><i class="fab fa-twitter fa-fw"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container-fluid">
+            <p class="copyright">Bản Quyền &copy; 2018 vndm.io</p>
+        </div>
+    </div>
+</footer>
+<!--/.footer-->
+    </div>
+    <!--/.wrapper-->
+    <div class="widget-chat">
+    <a class="chatHandle" href="javascript:void(0);"><img src="Images/trochuyen.png" alt="Trò Chuyện"></a>
+    <div class="widget-chat-content">
+		<form name="frmChat" onSubmit="return false;" method="post" data-toggle="validator">
+            <div class="panel-chat">
+                <div class="panel-chat-header">
+                    <a class="btn-close-chat">Trò Chuyện</a>
+                </div>
+                <div class="panel-chat-body">
+    				<div id="listMessage" class="panel-chat-content"></div>
+                </div>
+                <div class="panel-chat-footer">
+                                            <br/>
+                        <a href="login.html">Đăng Nhập Để Trò Chuyện</a>
+                                    </div>
+            </div>
+		</form>
+    </div>
+</div>
+<!--/.widget-chat-->
+<link rel="stylesheet" href="Styles/chat.css">
+<script src="Javascripts/chat.js"></script>
+<script type="text/javascript">
+<!--    
+    $(document).ready(function() 
+    { 
+        setInterval(function(){
+			loadMessage();
+		},2000);
+    }); 
+//-->
+</script>
+    <script src="Javascripts/popper.min.js"></script> 
+	<script src="Javascripts/bootstrap.min.js"></script>
+    <script src="Javascripts/common.js"></script>
+    <script src="Javascripts/validator.js"></script>
+        <script src="Javascripts/jquery.inputmask.bundle.js"></script>
+    
+    <script type="text/javascript">
+    <!--
+        $('input[name=xUsername]').inputmask({ 'regex' : '[a-z0-9\-\.\_\@]{0,50}' });
+    //-->
+    </script>
+    
+</body>
+</html>
