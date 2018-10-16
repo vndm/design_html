@@ -1811,7 +1811,8 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 	color:#fff
 }
 .nav-switch-theme {
-	display:flex
+	display:flex;
+	margin-right: 1.5rem;
 }
 .nav-switch-theme button {
 	background:none;
@@ -2105,7 +2106,7 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 	color:#0b1f34;
 	justify-content:center;
 	align-items:center;
-	padding:.5rem 1.5rem;
+	padding:0rem 1rem;
 	border:1px solid transparent;
 	-ms-transition:all 0.4s ease;
 	-moz-transition:all 0.4s ease;
@@ -2486,7 +2487,6 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 		text-decoration:none;
 		position:relative;
 		text-transform:uppercase;
-		padding:0 0 0 0;
 		background:transparent;
 		min-width:auto;
 		height:auto;
@@ -2704,7 +2704,7 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 	padding-top:6.3rem;
 	margin-right:4rem;
 	border-right: 1px solid #d5d5d5;
-	display: 999;
+	z-index: 999;
 }
 .main-content {
 	padding-top:6.3rem;
@@ -2837,11 +2837,11 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 }
 .sidebar-menu .dropdown-menu {
 	padding:0;
-	border-width:1px 1px 1px 0;
+	border-width:1px 1px 1px 1px;
 	border-style:solid;
 	border-color:#d5d5d5;
 	border-radius:0;
-	margin-left: 0;
+	margin-left: -1px;
 }
 .sidebar-menu .dropdown-menu>li {
 	font-size:1.3rem;
@@ -2871,6 +2871,11 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 }
 .sidebar-menu .dropdown-menu>li>a:hover,.sidebar-menu .dropdown-menu>li>a:focus {
 	outline:none
+}
+
+.sidebar-menu .dropdown-menu>li>ul{
+	border-width: 1px 1px 1px 0;
+	margin-left: -1px;
 }
 .sidebar-menu .dropdown-menu>li>a:hover {
 	background:#f2f3f8;
