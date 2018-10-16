@@ -1791,8 +1791,7 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 	display:flex;
 	border:1px solid #0b1f34;
 	border-radius:3px;
-	margin-left:2.5rem;
-	margin-right:1.5rem
+
 }
 .nav-language>a {
 	font-size:1.2rem;
@@ -2092,34 +2091,49 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 .nav-user>li {
 	display:inline-block;
 	font-size:1.3rem;
-	margin-right:6px
+
+
+	
+
 }
 .nav-user>li:last-child {
 	margin-right:0
 }
 .nav-user>li>a {
 	display:flex;
-	height:32px;
+	height:34px;
 	color:#0b1f34;
 	justify-content:center;
 	align-items:center;
-	padding:.5rem 0.5rem;
+	padding:.5rem 1.5rem;
 	border:1px solid transparent;
 	-ms-transition:all 0.4s ease;
 	-moz-transition:all 0.4s ease;
 	-o-transition:all 0.4s ease;
 	-webkit-transition:all 0.4s ease;
 	transition:all 0.4s ease;
-	border-radius:32px;
+	border-radius:4px;
+	line-height: 34px;
 	text-transform: unset;
+	font-weight: 500;
 }
 .nav-user>li>a.btn-register {
-	border-color:#fff
+	color: #0b1f34;
+	border:1px solid;
+	border-color: #0b1f34;
+	padding: 0 12px;
+	
 }
-.nav-user>li>a:hover {
-	text-decoration:none;
-	color:#f7941e;
-	border-color:#fff
+
+.nav-user>li>a.btn-login:hover {
+	color: #f7941e;
+	
+	
+}
+.nav-user>li>a.btn-register:hover {
+	
+	color:#fff;
+	background:#0b1f34;
 }
 .navbar.navbar-light {
 	padding:0.8rem 0
@@ -2690,12 +2704,14 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 	padding-top:6.3rem;
 	margin-right:4rem;
 	border-right: 1px solid #d5d5d5;
+	display: 999;
 }
 .main-content {
 	padding-top:6.3rem;
 	padding-bottom:6.3rem;
 	flex:0 0 calc(100% - 23rem);
 	max-width:calc(100% - 23rem)
+	z-index:1;
 }
 .no-sidebar .main-content {
 	flex:auto;
@@ -2935,12 +2951,16 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 .footer .footer-social>li a.twitter {
 	background:#2aaae0
 }
+.footer .footer-social>li a.instagram {
+	background:#67458a
+}
+
 .footer .footer-social>li a:hover {
 	text-decoration:none;
 	opacity:0.6
 }
 .footer .footer-bottom {
-	margin-top:5rem
+	margin-top:4.8rem
 }
 .footer .footer-bottom .copyright {
 	text-align:center;
@@ -3103,4 +3123,27 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 	.sec-header .nav-tabs>li a {
 		font-size:1.7rem
 	}
+}
+
+
+/* vu edit table*/
+
+thead>tr>th>.btn.btn-default {
+
+	background: #000;
+	margin-top: 0;
+	padding: 0;
+	text-transform: uppercase;
+	color: #888888 !important;
+}
+
+thead>tr>th .btn.btn-default:hover {
+
+	color: #0b1f34 !important;
+}
+
+
+.btn-default:focus, .btn-default.focus {
+
+	box-shadow:none;
 }

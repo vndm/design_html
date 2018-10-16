@@ -42,6 +42,8 @@
 
 
 
+
+
 }
 
 .widget-chat .widget-chat-content.show {
@@ -152,11 +154,7 @@
 
 	background:#fff;
 
-	-webkit-border-top-left-radius:0px;
 
-	-moz-border-radius-topleft:0px;
-
-	border-top-left-radius:0px
 
 }
 
