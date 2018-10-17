@@ -269,36 +269,21 @@ iframe {
 }
 .mainvisual-inner {
 	position:relative;
-	padding:20px 0 130px;
-	background:url(../Images/bg_mainvisual.png) no-repeat right bottom;
-	margin-right:0;
 	-ms-background-size:contain;
 	-moz-background-size:contain;
 	-webkit-background-size:contain;
-	background-size:contain
+	background-size:contain;
+
 }
-.mainvisual-txt1 {
-	font-size:1.4rem;
-	font-weight:200;
-	margin-bottom:9rem;
-	color:rgba(255,255,255,0.5)
-}
-.mainvisual-txt2 {
-	text-transform:uppercase;
-	font-size:3.6rem;
-	font-weight:200;
-	color:rgba(255,255,255,0.7);
-	margin-bottom:2rem
-}
-.mainvisual-txt2>strong {
-	color:#fff;
-	font-weight:bold
-}
-.bitcoin-top {
-	position:static
+
+
+.bitcoin-top a, .bitcoin-top img {
+	position:relative;
+	margin: 0 auto;
+	
 }
 .bitcoin-top-inner {
-	position:relative
+	
 }
 .bitcoin-top-inner>div {
 	position:absolute;
@@ -309,78 +294,117 @@ iframe {
 	-o-transition:all 0.8s ease;
 	-webkit-transition:all 0.8s ease;
 	transition:all 0.8s ease;
-	-moz-transform:translateY(40px);
-	-webkit-transform:translateY(40px);
-	-o-transform:translateY(40px);
-	-ms-transform:translateY(40px);
-	transform:translateY(40px)
+	-moz-transform:translateY(0px);
+	-webkit-transform:translateY(0px);
+	-o-transform:translateY(0px);
+	-ms-transform:translateY(0px);
+	transform:translateY(0px)
 }
 .bitcoin-top-inner>div.active {
 	opacity:1;
 	transform:translateY(0)
 }
 .bitcoin-top .pagination-bitcoin {
-	text-align:left;
-	position:absolute;
-	bottom:2.5rem;
-	left:0
+	text-align:center;
+	position:relative;
+	bottom: 4rem;
+	height: 0;
 }
 .bitcoin-top .pagination-bitcoin>li {
 	display:inline-block;
-	margin:0.8rem
+	margin:0.3rem
 }
 .bitcoin-top .pagination-bitcoin>li>a {
 	display:block;
-	width:12px;
-	height:12px;
-	border:2px solid rgba(225,225,225,0.1);
-	border-radius:12px
+	width:20px;
+	height:10px;
+	background: #fff;
+	opacity: 0.2;
 }
 .bitcoin-top .pagination-bitcoin>li>a:hover {
 	opacity:0.7
 }
 .bitcoin-top .pagination-bitcoin>li>a.active {
-	border-color:#426eac
+	background: #fff;
+	opacity: 0.8;
 }
 .bitcoin-top-item {
 	display:flex;
 	align-items:center
 }
-.bitcoin-top dl {
-	font-weight:bold;
-	display:flex;
-	flex-wrap:wrap;
-	align-items:center;
-	margin-right:68px
+
+/*vu edit slide*/
+.mainvisual .bg-gradient-1{
+	background: rgba(90,162,229,1);
+	background: -moz-linear-gradient(45deg, rgba(90,162,229,1) 0%, rgba(113,212,199,1) 100%);
+	background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(90,162,229,1)), color-stop(100%, rgba(113,212,199,1)));
+	background: -webkit-linear-gradient(45deg, rgba(90,162,229,1) 0%, rgba(113,212,199,1) 100%);
+	background: -o-linear-gradient(45deg, rgba(90,162,229,1) 0%, rgba(113,212,199,1) 100%);
+	background: -ms-linear-gradient(45deg, rgba(90,162,229,1) 0%, rgba(113,212,199,1) 100%);
+	background: linear-gradient(45deg, rgba(90,162,229,1) 0%, rgba(113,212,199,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5aa2e5', endColorstr='#71d4c7', GradientType=1 );
 }
-.bitcoin-top dl:last-child {
-	margin-right:0
+
+.mainvisual .bg-gradient-2{
+	background: rgba(218,94,164,1);
+	background: -moz-linear-gradient(45deg, rgba(218,94,164,1) 0%, rgba(172,129,220,1) 100%);
+	background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(218,94,164,1)), color-stop(100%, rgba(172,129,220,1)));
+	background: -webkit-linear-gradient(45deg, rgba(218,94,164,1) 0%, rgba(172,129,220,1) 100%);
+	background: -o-linear-gradient(45deg, rgba(218,94,164,1) 0%, rgba(172,129,220,1) 100%);
+	background: -ms-linear-gradient(45deg, rgba(218,94,164,1) 0%, rgba(172,129,220,1) 100%);
+	background: linear-gradient(45deg, rgba(218,94,164,1) 0%, rgba(172,129,220,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#da5ea4', endColorstr='#ac81dc', GradientType=1 );
 }
-.bitcoin-top dl dt {
-	display:flex;
-	width:64px;
-	height:36px;
-	flex:1 1 64px;
-	font-size:1.6rem;
-	text-align:center;
-	border:1px solid transparent;
-	line-height:1;
-	align-items:center;
-	justify-content:center;
-	text-transform:uppercase;
-	border-radius:5px
+
+
+.mainvisual .bg-gradient-3{
+	background: rgba(66,49,105,1);
+	background: -moz-linear-gradient(45deg, rgba(66,49,105,1) 0%, rgba(132,43,176,1) 100%);
+	background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(66,49,105,1)), color-stop(100%, rgba(132,43,176,1)));
+	background: -webkit-linear-gradient(45deg, rgba(66,49,105,1) 0%, rgba(132,43,176,1) 100%);
+	background: -o-linear-gradient(45deg, rgba(66,49,105,1) 0%, rgba(132,43,176,1) 100%);
+	background: -ms-linear-gradient(45deg, rgba(66,49,105,1) 0%, rgba(132,43,176,1) 100%);
+	background: linear-gradient(45deg, rgba(66,49,105,1) 0%, rgba(132,43,176,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#423169', endColorstr='#842bb0', GradientType=1 );
 }
-.bitcoin-top dl dd {
-	padding-left:12px;
-	margin-bottom:0;
-	line-height:1;
-	font-size:1.8rem
+
+
+.mainvisual .bg-gradient-4{
+	background: rgba(167,82,209,1);
+	background: -moz-linear-gradient(45deg, rgba(167,82,209,1) 0%, rgba(115,138,231,1) 100%);
+	background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(167,82,209,1)), color-stop(100%, rgba(115,138,231,1)));
+	background: -webkit-linear-gradient(45deg, rgba(167,82,209,1) 0%, rgba(115,138,231,1) 100%);
+	background: -o-linear-gradient(45deg, rgba(167,82,209,1) 0%, rgba(115,138,231,1) 100%);
+	background: -ms-linear-gradient(45deg, rgba(167,82,209,1) 0%, rgba(115,138,231,1) 100%);
+	background: linear-gradient(45deg, rgba(167,82,209,1) 0%, rgba(115,138,231,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a752d1', endColorstr='#738ae7', GradientType=1 );
 }
-.bitcoin-top dl dd span {
-	display:inline-block;
-	margin-left:10px;
-	font-weight:100
+
+.mainvisual .bg-gradient-5{
+	background: rgba(30,110,185,1);
+	background: -moz-linear-gradient(45deg, rgba(30,110,185,1) 0%, rgba(132,166,96,1) 100%);
+	background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(30,110,185,1)), color-stop(100%, rgba(132,166,96,1)));
+	background: -webkit-linear-gradient(45deg, rgba(30,110,185,1) 0%, rgba(132,166,96,1) 100%);
+	background: -o-linear-gradient(45deg, rgba(30,110,185,1) 0%, rgba(132,166,96,1) 100%);
+	background: -ms-linear-gradient(45deg, rgba(30,110,185,1) 0%, rgba(132,166,96,1) 100%);
+	background: linear-gradient(45deg, rgba(30,110,185,1) 0%, rgba(132,166,96,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e6eb9', endColorstr='#84a660', GradientType=1 );
 }
+
+.mainvisual .bg-gradient-6{
+	background: rgba(242,217,94,1);
+	background: -moz-linear-gradient(45deg, rgba(242,217,94,1) 0%, rgba(245,119,35,1) 100%);
+	background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(242,217,94,1)), color-stop(100%, rgba(245,119,35,1)));
+	background: -webkit-linear-gradient(45deg, rgba(242,217,94,1) 0%, rgba(245,119,35,1) 100%);
+	background: -o-linear-gradient(45deg, rgba(242,217,94,1) 0%, rgba(245,119,35,1) 100%);
+	background: -ms-linear-gradient(45deg, rgba(242,217,94,1) 0%, rgba(245,119,35,1) 100%);
+	background: linear-gradient(45deg, rgba(242,217,94,1) 0%, rgba(245,119,35,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2d95e', endColorstr='#f57723', GradientType=1 );
+}
+
+
+/*******end slide******/
+
 .bitcoin-top-buy {
 	color:#49ba6f
 }
@@ -395,7 +419,7 @@ iframe {
 }
 @media (max-width:991px) {
 	.mainvisual {
-		background:#0b1f34 url(../Images/bg_mainvisual.png) no-repeat calc(100%+200px) bottom;
+		
 		-ms-background-size:auto 100%;
 		-moz-background-size:auto 100%;
 		-webkit-background-size:auto 100%;
@@ -403,12 +427,13 @@ iframe {
 	}
 	.mainvisual-inner {
 		background:none;
-		margin-right:0
+		display: flex;
+
 	}
 }
 @media (max-width:767px) {
 	.mainvisual {
-		background:#0b1f34 url(../Images/bg_mainvisual.png) no-repeat calc(100%) bottom;
+		
 		-ms-background-size:auto 50%;
 		-moz-background-size:auto 50%;
 		-webkit-background-size:auto 50%;
@@ -417,7 +442,6 @@ iframe {
 }
 @media (max-width:667px) {
 	.mainvisual {
-		background:#0b1f34 url(../Images/bg_mainvisual.png) no-repeat calc(100%+50px) bottom;
 		-ms-background-size:auto 50%;
 		-moz-background-size:auto 50%;
 		-webkit-background-size:auto 50%;
@@ -426,7 +450,7 @@ iframe {
 }
 @media (max-width:639px) {
 	.mainvisual-inner {
-		padding-bottom:10rem
+	
 	}
 	.mainvisual-txt1 {
 		margin-bottom:5.5rem
@@ -1913,7 +1937,8 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 	flex-basis:100%;
 	flex-grow:1;
 	align-items:center;
-	flex:0 0 auto
+	flex:0 0 auto;
+	margin-left: 20px !important;
 }
 .navbar-toggler-user {
 	display:none
@@ -2393,7 +2418,8 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 		-webkit-transform:translateX(200px);
 		-o-transform:translateX(200px);
 		-ms-transform:translateX(200px);
-		transform:translateX(200px)
+		transform:translateX(200px);
+	    
 	}
 	.navbar-collapse-user.show .navbar-collapse-user-inner {
 		-moz-transform:translateX(0);
@@ -2956,8 +2982,9 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 .footer .footer-social>li a.twitter {
 	background:#2aaae0
 }
-.footer .footer-social>li a.instagram {
-	background:#67458a
+.footer .footer-social>li a.telegram {
+	color:#67458a;
+	font-size: 24px;
 }
 
 .footer .footer-social>li a:hover {
