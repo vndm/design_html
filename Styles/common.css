@@ -34,8 +34,7 @@
 	font-weight:500;
 	font-style:normal
 }
------ font icon VNDM  -----
-
+/***Font VNDM***/
 @font-face {
   font-family: 'VNDM';
   src:  url('Fonts/VNDM.eot?5xgwaj');
@@ -2740,7 +2739,7 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 	padding-top:6.3rem;
 	padding-bottom:6.3rem;
 	flex:0 0 calc(100% - 23rem);
-	max-width:calc(100% - 23rem)
+	max-width:calc(100% - 23rem);
 	z-index:1;
 }
 .no-sidebar .main-content {
@@ -2987,7 +2986,7 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 	background:#2aaae0
 }
 .footer .footer-social>li a.telegram {
-	color:#2ca5e0;
+	color:#67458a;
 	font-size: 24px;
 }
 
