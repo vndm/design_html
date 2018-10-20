@@ -3,19 +3,19 @@
     position:relative
 }
 .history-content .sec-header>.wrap{
-    margin-left:-1rem;
-    margin-right:-1rem;
-    display:flex;
-    flex-wrap:wrap;
-    flex:1
+
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
 }
 .history-content .sec-header>.wrap>div{
-    padding-left:1rem;
-    padding-right:1rem
+
 }
 .history-content .sec-header>.wrap>div:nth-of-type(4){
     margin-left:auto
 }
+.history-content .sec-header .form-inline{
+    flex:1;
 .history-content .sec-header .form-control{
     height:3.6rem
 }
@@ -40,7 +40,7 @@
 }
 .history-content .date-from,.history-content .date-to{
     position:relative;
-    padding-left:2rem
+
 }
 .history-content .date-from i,.history-content .date-to i{
     position:relative;
@@ -67,7 +67,7 @@
     transform:translateY(-50%)
 }
 .history-content .date-from input,.history-content .date-to input{
-    padding-left:3.8rem
+    padding-left:1rem;
 }
 .history-content .btn-filter{
     padding:0 !important;
