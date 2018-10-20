@@ -34,8 +34,7 @@
 	font-weight:500;
 	font-style:normal
 }
------ font icon VNDM  -----
-
+/***Font VNDM***/
 @font-face {
   font-family: 'VNDM';
   src:  url('Fonts/VNDM.eot?5xgwaj');
@@ -1864,7 +1863,7 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 }
 @media (min-width:768px) {
 	.header {
-		height: 5rem
+		height: 6rem
 	}
 }
 @media (max-width:979px) {
@@ -1919,10 +1918,14 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 @media (min-width:768px) {
 	.navbar-expand-md .navbar-collapse {
 		justify-content:start;
-		padding-left:4rem
+		padding-left:4rem;
+		pointer-events: none;
 	}
 	.navbar-expand-md .navbar-collapse.nav-user-area {
 		justify-content:flex-end
+	}
+	.navbar-collapse-inner{
+		pointer-events: auto;
 	}
 	.btn-policy {
 		margin-left:1.2rem;
@@ -2737,7 +2740,7 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 	padding-top:6.3rem;
 	padding-bottom:6.3rem;
 	flex:0 0 calc(100% - 23rem);
-	max-width:calc(100% - 23rem)
+	max-width:calc(100% - 23rem);
 	z-index:1;
 }
 .no-sidebar .main-content {

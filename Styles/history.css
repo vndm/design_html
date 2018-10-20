@@ -1,4 +1,4 @@
-/*@import url("jquery-ui.css");*/
+.history-content .sec-header .input-search-group{ top: 0; right: 10px; }
 .history-content .history-body{
     position:relative
 }
@@ -23,12 +23,15 @@
     padding:1rem 1.5rem
 }
 @media (max-width: 767px){
+   
+}
+@media (max-width: 567px){
     .history-content .sec-header>.wrap>div:nth-of-type(1),.history-content .sec-header>.wrap>div:nth-of-type(2){
         flex:0 0 100%;
         margin:0 0 2rem
     }
-}
-@media (max-width: 567px){
+    .history-content .sec-header .input-search-group{ top: 50%; right: 0;}
+
     .history-content .sec-header>.wrap>div:nth-of-type(4) .input-search-group{
         top:auto;
         margin-top:1.8rem
@@ -40,9 +43,13 @@
 }
 .history-content .date-from,.history-content .date-to{
     position:relative;
+<<<<<<< HEAD
 
+=======
+    padding-left: 1rem;
+>>>>>>> 916d288d2a5cf7442e1921705fdf53d810480c5d
 }
-.history-content .date-from i,.history-content .date-to i{
+.history-content .date-from,.history-content .date-to{
     position:relative;
     font-size:2rem;
     top:-0.1rem
@@ -67,7 +74,12 @@
     transform:translateY(-50%)
 }
 .history-content .date-from input,.history-content .date-to input{
+<<<<<<< HEAD
     padding-left:1rem;
+=======
+    max-width: 120px;
+    text-align: center;
+>>>>>>> 916d288d2a5cf7442e1921705fdf53d810480c5d
 }
 .history-content .btn-filter{
     padding:0 !important;
@@ -82,4 +94,27 @@
 .ui-widget.ui-widget-content{
     z-index:9999 !important
 }
- 
+@media (max-width: 639px){
+    .history-content .date-from,.history-content .date-to{
+        margin-bottom: 0;
+    }
+    .history-content .date-from input,.history-content .date-to input{
+        max-width: 90px;
+        text-align: center;
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+    }
+} 
+@media (max-width: 374px){
+    .history-content .date-from input,.history-content .date-to input{
+        max-width: 70px;
+        text-align: center;
+        font-size: 1rem;
+    }
+    .history-content .sec-header .btn{
+        font-size: 1.2rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+} 
+
